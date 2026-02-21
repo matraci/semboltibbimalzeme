@@ -1,3 +1,20 @@
-flask
-requests
-# diğer python paketlerinizi buraya ekleyin
+# Python dependencies for SembolTibbi Website
+# Static website - minimal dependencies needed
+
+# Web server (optional, for local development)
+# Use: python -m http.server 8000
+
+# If you want to use a Python web framework in the future:
+# Flask==3.0.0
+# Jinja2==3.1.2
+
+# For static site generation or build tools:
+# Werkzeug==3.0.1
+
+# Development tools
+# black==24.1.1
+# flake8==7.0.0
+# pytest==7.4.4
+
+# Note: This is a static HTML/CSS/JavaScript website
+# No backend dependencies required for basic functionality
