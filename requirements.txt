@@ -1,0 +1,3 @@
+flask
+requests
+# diğer python paketlerinizi buraya ekleyin
