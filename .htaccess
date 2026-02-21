@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# .html uzantisiz URL'leri destekle
+# Eger dizin degilse ve .html dosyasi varsa, uzantisiz goster
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# .html ile gelen istekleri uzantisiz URL'ye yonlendir (301 redirect)
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
