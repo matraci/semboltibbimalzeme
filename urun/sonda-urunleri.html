@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonda Ürünleri | SembolTibbi</title>
+    <meta name="description" content="Hidrofilik sondalar ve idrar torbaları - SembolTibbi Malzeme">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/modern.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9N4C1S2CX"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-H9N4C1S2CX');</script>
+    <style>
+        .pcard-wrap {
+            text-decoration: none;
+            display: block;
+            height: 100%;
+        }
+
+        .pcard {
+            background: #f5f5f5;
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: background 0.25s ease, box-shadow 0.25s ease;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .pcard:hover {
+            background: #ffffff;
+            box-shadow: 0 6px 28px rgba(0, 0, 0, 0.12);
+        }
+
+        .pcard-img {
+            background: #ebebeb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 220px;
+            padding: 20px;
+            transition: background 0.25s ease;
+        }
+
+        .pcard:hover .pcard-img {
+            background: #f5f5f5;
+        }
+
+        .pcard-img img {
+            max-width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+            transition: transform 0.35s ease;
+        }
+
+        .pcard:hover .pcard-img img {
+            transform: scale(1.06);
+        }
+
+        .pcard-body {
+            padding: 1rem 1.1rem 1.3rem;
+        }
+
+        .pcard-body h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .pcard-link {
+            font-size: 0.8rem;
+            color: #667eea;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .pcard-link::after {
+            content: '→';
+        }
+
+        .cat-hero {
+            background: linear-gradient(135deg, #f8f9ff 0%, #eef0ff 100%);
+            border-bottom: 1px solid #e0e3f0;
+            padding: 2.5rem 0 2rem;
+        }
+
+        .cat-hero h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 0.3rem;
+        }
+
+        .cat-hero .breadcrumb {
+            background: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cat-hero .breadcrumb-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .cat-hero .breadcrumb-item.active {
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .cat-hero .breadcrumb-item+.breadcrumb-item::before {
+            color: #aaa;
+        }
+
+        .section-head {
+            margin-bottom: 2rem;
+        }
+
+        .section-head h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 0.2rem;
+        }
+
+        .section-divider {
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+            margin: 0.6rem 0 0;
+        }
+
+        .scroll-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .scroll-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-area" id="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand logo" href="../index.html"><img src="../upload/396e08540e.png" alt="SembolTibbi"
+                        style="height:60px;"></a>
+                <button class="navbar-toggler hamburger" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"><span></span><span></span><span></span></button>
+                <div class="collapse navbar-collapse main-menu" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Ana Sayfa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../hakkimizda.html">Hakkımızda</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="../urun/index.html">Ürünler</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../bakimlar.html">Bakımlar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="cat-hero">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../index.html">Ana Sayfa</a></li>
+                    <li class="breadcrumb-item"><a href="../urun/index.html">Ürünler</a></li>
+                    <li class="breadcrumb-item active">Sonda Ürünleri</li>
+                </ol>
+            </nav>
+            <h1 class="fade-in mt-2">Sonda Ürünleri</h1>
+            <p class="fade-in" style="color:#555;font-size:0.95rem;margin:0;">Hidrofilik sondalar ve idrar torbaları</p>
+        </div>
+    </div>
+
+    <section style="background:#fff; padding: 3rem 0 4rem;">
+        <div class="container">
+            <div class="section-head">
+                <h2>Tüm Ürünler</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="row g-3">
+                <div class="col-6 col-md-4 col-lg-3"><a href="../urun-detay/kendinden-jelli-sonda.html"
+                        class="pcard-wrap">
+                        <div class="pcard scroll-element">
+                            <div class="pcard-img"><img src="../upload/7b71d8cf83.png" alt="Kendinden Jelli Sonda">
+                            </div>
+                            <div class="pcard-body">
+                                <h4>Kendinden Jelli Sonda</h4><span class="pcard-link">İncele</span>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-6 col-md-4 col-lg-3"><a
+                        href="../urun-detay/cololast-kendinden-jelli-sondalar-easicath.html" class="pcard-wrap">
+                        <div class="pcard scroll-element">
+                            <div class="pcard-img"><img src="../upload/7b71d8cf83.png"
+                                    alt="Tak Sonda"></div>
+                            <div class="pcard-body">
+                                <h4>Tak Sonda</h4><span class="pcard-link">İncele</span>
+                            </div>
+                        </div>
+                    </a></div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget"><img src="../upload/396e08540e.png" alt="SembolTibbi" class="mb-4"
+                            style="height:50px;background:white;padding:5px;border-radius:5px;">
+                        <ul class="footer-contact">
+                            <li><i class="fas fa-phone text-white"></i><a href="tel:+902125290186.html">+90 212 529 01 86</a>
+                            </li>
+                            <li><i class="fas fa-envelope text-white"></i><a
+                                    href="mailto:info@semboltibbi.com">info@semboltibbi.com</a></li>
+                            <li><i class="fas fa-map-marker-alt text-white"></i><span>Haseki Sultan Mah. Özbek Süleyman
+                                    Efendi Sok. No: 14/A Fındıkzade Fatih / İSTANBUL</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget">
+                        <h3>Hızlı Menü</h3>
+                        <ul>
+                            <li><a href="../index.html">Ana Sayfa</a></li>
+                            <li><a href="../hakkimizda.html">Hakkımızda</a></li>
+                            <li><a href="../urun/index.html">Ürünler</a></li>
+                            <li><a href="../bakimlar.html">Bakımlar</a></li>
+                            <li><a href="../iletisim.html">İletişim</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget">
+                        <h3>Ürün Kategorileri</h3>
+                        <ul>
+                            <li><a href="ostomi-urunleri.html">Ostomi Ürünleri</a></li>
+                            <li><a href="yara-bakim.html">Yara Bakım</a></li>
+                            <li><a href="kontinans-bakim-urunleri.html">Kontinans Bakım</a></li>
+                            <li><a href="sonda-urunleri.html">Sonda Ürünleri</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SembolTibbi. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send?phone=+905317721888&text=Merhaba%20bilgi%20almak%20istiyorum."
+        class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); } });
+            }, { threshold: 0.05 });
+            document.querySelectorAll('.scroll-element').forEach(el => observer.observe(el));
+            window.addEventListener('scroll', () => document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50));
+        });
+    </script>
+</body>
+
+</html>

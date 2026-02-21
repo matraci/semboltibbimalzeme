@@ -1,0 +1,1061 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>SembolTibbi - Medical Solutions</title>
+    <meta name="description"
+        content="25 yılı aşkın süredir sağlık sektöründe uzmanlaşmış - Ostomi, Yara Bakımı, Kontinans ve Sonda ürünleri">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --primary-dark: #0a58ca;
+            --secondary: #20c997;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gradient: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .header.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .header .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+            padding: 10px 20px !important;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .header .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .header .nav-link:hover::after,
+        .header .nav-link.active::after {
+            width: 60%;
+        }
+
+        .header .nav-link:hover {
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f8fffe 0%, #e8f5f2 50%, #e3f2fd 100%);
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 70%;
+            height: 140%;
+            background: radial-gradient(circle, rgba(13, 110, 253, 0.08) 0%, transparent 70%);
+            animation: float 15s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(-30px, 30px) rotate(5deg);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin: 20px 0 30px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .btn-gradient {
+            background: var(--gradient);
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(13, 110, 253, 0.4);
+            color: white;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-left: 15px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Features */
+        .features {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(32, 201, 151, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            color: var(--primary);
+            transition: all 0.4s;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: rotate(360deg) scale(1.1);
+            background: var(--gradient);
+            color: white;
+        }
+
+        /* Products */
+        .products {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            margin-bottom: 30px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-card .card-body {
+            padding: 25px;
+        }
+
+        .product-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .product-card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        /* Services */
+        .services {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fffe 0%, #e8f5f2 100%);
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .service-card .card-body {
+            padding: 30px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Stats */
+        .stats {
+            background: var(--gradient);
+            padding: 80px 0;
+            color: white;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Categories */
+        .categories {
+            padding: 100px 0;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            transition: transform 0.4s;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.2);
+        }
+
+        .category-card h4 {
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer h4 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .footer h4::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient);
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer ul li a:hover {
+            color: white;
+            padding-left: 10px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 50px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s;
+            z-index: 999;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        @keyframes pulse-whatsapp {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            }
+
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+            }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: var(--gradient);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Animations */
+        .scroll-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-element.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero {
+                padding-top: 100px;
+                min-height: auto;
+                padding-bottom: 60px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 15px;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        /* Swiper */
+        .swiper {
+            width: 100%;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-slide .slide-title {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--primary) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="index.html">
+                    <img src="upload/396e08540e.png" alt="SembolTibbi" style="height: 60px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Ana Sayfa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="hakkimizda.html">Hakkımızda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="urun/index.html">Ürünler</a></li>
+                        <li class="nav-item"><a class="nav-link" href="bakimlar.html">Bakımlar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="mb-4">Sağlığınız Bizim Önceliğimiz</h1>
+                    <p>25 yılı aşkın süredir sağlık sektöründe uzmanlaşmış kadromuzla Ostomi, Yara Bakımı, Kontinans ve
+                        Sonda ürünlerinde en kaliteli çözümleri sunuyoruz.</p>
+                    <div class="d-flex flex-wrap">
+                        <a href="urun/index.html" class="btn btn-gradient">Ürünlerimiz</a>
+                        <a href="iletisim.html" class="btn btn-outline">İletişim</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <img src="upload/1182d808b0.png" alt="SembolTibbi" class="img-fluid pulse"
+                        style="max-width: 80%; animation: float 4s ease-in-out infinite;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Neden SembolTibbi?</h2>
+            </div>
+            <div class="row g-4" id="features-container">
+                <!-- Dinamik olarak doldurulacak -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hizmetlerimiz</h2>
+            </div>
+            <div class="row g-4" id="services-container">
+                <!-- Dinamik olarak doldurulacak -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="25">0</span>
+                        <span class="stat-label">Yıllık Tecrübe</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="30">0</span>
+                        <span class="stat-label">Uzman Personel</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="1000">0</span>
+                        <span class="stat-label">Mutlu Hasta</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="24">0</span>
+                        <span class="stat-label">Destek Saatleri</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories (Ürün Kategorileri) -->
+    <section class="services" id="categories" style="background: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ürün Kategorileri</h2>
+            </div>
+            <div class="row g-4" id="categories-container">
+                <!-- Dinamik olarak doldurulacak -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Öne Çıkan Ürünler</h2>
+            </div>
+            <div class="row g-4" id="products-container">
+                <!-- Dinamik olarak doldurulacak -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4>SembolTibbi</h4>
+                    <p class="mt-3" style="color: rgba(255,255,255,0.7);">25 yılı aşkın süredir sağlık sektöründe
+                        uzmanlaşmış, hastalarımızın ihtiyaçlarını ön planda tutan medikal çözümler sunuyoruz.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h4>Hızlı Menü</h4>
+                    <ul class="mt-3">
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="urun/index.html">Ürünler</a></li>
+                        <li><a href="bakimlar.html">Bakımlar</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h4>İletişim</h4>
+                    <ul class="footer-contact mt-3" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 15px;"><i class="fas fa-phone me-2"></i>+90 212 529 01 86</li>
+                        <li style="margin-bottom: 15px;"><i class="fas fa-envelope me-2"></i>info@semboltibbi.com</li>
+                        <li style="margin-bottom: 15px;"><i class="fas fa-map-marker-alt me-2"></i>Haseki Sultan
+                            Mahallesi, Özbek Süleyman Efendi Sokak No: 14/A Fındıkzade Fatih İSTANBUL</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SembolTibbi. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://api.whatsapp.com/send?phone=+905317721888" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // -------------------- Dinamik Veriler --------------------
+        const featuresData = [
+            {
+                icon: 'fa-user-md',
+                title: 'Uzman Kadro',
+                description: 'Konusunda uzman hemşire ve klinik destek personel kadromuzla hizmet vermekteyiz.'
+            },
+            {
+                icon: 'fa-info-circle',
+                title: 'Ön Bilgilendirme',
+                description: 'Ostomi, Yara Bakım, Kontinans ve Sonda ürünleri kullanım bilgilerini başlangıçta paylaşıyoruz.'
+            },
+            {
+                icon: 'fa-shield-alt',
+                title: 'Güvenilir Ürünler',
+                description: 'Tüm ürünlerimiz tüm belgeleri tam ve kalitesini ispatlamış güvenilir ürünlerdir.'
+            }
+        ];
+
+        const servicesData = [
+            {
+                img: 'upload/50de4f3282.jpg',
+                title: 'SGK İşlemleri',
+                description: 'Anlaşmalı olduğumuz Sosyal Güvenlik kurumuna hastalarımızın kullanmak istedikleri malzemelerin reçete hizmetini sunmaktayız.'
+            },
+            {
+                img: 'upload/a9d6c9dfe7.jpg',
+                title: 'Stoma Bakım Hizmeti',
+                description: 'Ameliyat sonrası stoma sorunlarına malzeme kullanım bilgisini hastalarımıza uygulamalı olarak paylaşıyoruz.'
+            },
+            {
+                img: 'upload/6cf02dca99.png',
+                title: 'Yara Bakım Hizmeti',
+                description: 'Hastaların bizlerle iletişimi halinde malzeme kullanım bilgisini hastalarımıza uygulamalı olarak paylaşıyoruz.'
+            }
+        ];
+
+        const categoriesData = [
+            {
+                img: 'upload/4b61bac7b9.jpg',
+                title: 'Ostomi Ürünleri',
+                description: 'Kolostomi, Ürostomi torbaları ve bakım ürünleri.',
+                link: 'urun/ostomi-urunleri.html'
+            },
+            {
+                img: 'upload/6cf02dca99.png',
+                title: 'Yara Bakım',
+                description: 'Modern yara bakım örtüleri ve tedavi çözümleri.',
+                link: 'urun/yara-bakim.html'
+            },
+            {
+                img: 'upload/ebb4fcba6a.jpg',
+                title: 'Kontinans',
+                description: 'İnkontinans bakım ürünleri ve hijyen çözümleri.',
+                link: 'urun/kontinans-bakim-urunleri.html'
+            },
+            {
+                img: 'upload/40660c35b7.png', // placeholder (stoma)
+                title: 'Sonda Ürünleri',
+                description: 'Hidrofilik sondalar ve idrar torbaları.',
+                link: 'urun/sonda-urunleri.html'
+            }
+        ];
+
+        const productsData = [
+            {
+                img: 'upload/f2d5385277.png',
+                title: 'Adaptör Uyumlu Torbalar',
+                description: 'Kolostomi ve ileostomi için güvenli adaptör sistemi',
+                link: 'urun-detay/adaptor-uyumlu-kolostomi-ve-ileostomi-torbalar.html'
+            },
+            {
+                img: 'upload/010c87a9fd.png',
+                title: 'Brava Yapışkan Çıkartıcı',
+                description: 'Cilt dostu yapışkan çıkarıcı spreyler',
+                link: 'urun-detay/brava-yapiskan-cikartici-sprey.html'
+            },
+            {
+                img: 'upload/49ee3ef0c7.png',
+                title: 'Biatain Yara Örtüleri',
+                description: 'Üstün emicilik ve yara iyileşmesi',
+                link: 'urun-detay/biatain-yapiskanli-yara-ortuleri.html'
+            }
+        ];
+
+        // -------------------- Dinamik Oluşturma Fonksiyonları --------------------
+        function renderFeatures() {
+            const container = document.getElementById('features-container');
+            if (!container) return;
+            container.innerHTML = featuresData.map(item => `
+                <div class="col-md-4">
+                    <div class="feature-card scroll-element">
+                        <div class="feature-icon">
+                            <i class="fas ${item.icon}"></i>
+                        </div>
+                        <h4>${item.title}</h4>
+                        <p>${item.description}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderServices() {
+            const container = document.getElementById('services-container');
+            if (!container) return;
+            container.innerHTML = servicesData.map(item => `
+                <div class="col-md-4">
+                    <div class="service-card scroll-element">
+                        <div class="img-zoom">
+                            <img src="${item.img}" alt="${item.title}">
+                        </div>
+                        <div class="card-body">
+                            <h3>${item.title}</h3>
+                            <p>${item.description}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderCategories() {
+            const container = document.getElementById('categories-container');
+            if (!container) return;
+            container.innerHTML = categoriesData.map(item => `
+                <div class="col-md-3">
+                    <a href="${item.link}" class="text-decoration-none">
+                        <div class="service-card scroll-element">
+                            <div class="img-zoom">
+                                <img src="${item.img}" alt="${item.title}">
+                            </div>
+                            <div class="card-body">
+                                <h3>${item.title}</h3>
+                                <p>${item.description}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            `).join('');
+        }
+
+        function renderProducts() {
+            const container = document.getElementById('products-container');
+            if (!container) return;
+            container.innerHTML = productsData.map(item => `
+                <div class="col-md-4">
+                    <div class="product-card scroll-element">
+                        <div class="img-zoom" style="height: 250px; display: flex; align-items: center; justify-content: center; background: #f8f9fa; overflow: hidden;">
+                            <img src="${item.img}" alt="${item.title}" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+                        </div>
+                        <div class="card-body">
+                            <h4>${item.title}</h4>
+                            <p>${item.description}</p>
+                            <a href="${item.link}" class="btn btn-gradient btn-sm">Detay</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // -------------------- Sayfa Yüklendiğinde Çalıştır --------------------
+        document.addEventListener('DOMContentLoaded', function () {
+            renderFeatures();
+            renderServices();
+            renderCategories();
+            renderProducts();
+
+            // Mevcut script'teki diğer işlevler (swiper, scroll, counter vb.)
+            // Aşağıdaki kodlar orijinal script'ten alınmıştır (küçük düzenlemelerle)
+
+            // Initialize Swiper
+            const swiper = new Swiper(".mySwiper", {
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                loop: true,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                }
+            });
+
+            // Header Scroll
+            window.addEventListener('scroll', function () {
+                const header = document.getElementById('header');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Back to Top
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            backToTop.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Scroll Animations
+            const scrollElements = document.querySelectorAll('.scroll-element');
+
+            const elementInView = (el, dividend = 1) => {
+                const elementTop = el.getBoundingClientRect().top;
+                return elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend;
+            };
+
+            const displayScrollElement = (element) => {
+                element.classList.add('scrolled');
+            };
+
+            const handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.25)) {
+                        displayScrollElement(el);
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', handleScrollAnimation);
+            handleScrollAnimation();
+
+            // Counter Animation
+            const counters = document.querySelectorAll('.stat-number');
+
+            const animateCounter = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / 50;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(() => animateCounter(counter), 30);
+                } else {
+                    counter.innerText = target + '+';
+                }
+            };
+
+            const counterSection = document.querySelector('.stats');
+            if (counterSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            counters.forEach(counter => animateCounter(counter));
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                observer.observe(counterSection);
+            }
+
+            // Loader
+            const loader = document.querySelector('.loader');
+            if (loader) {
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
+                }, 1500);
+            }
+        });
+    </script>
+</body>
+
+</html>

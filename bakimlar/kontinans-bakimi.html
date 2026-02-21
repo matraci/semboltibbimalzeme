@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Kontinans Bakımı Rehberi | SembolTibbi</title>
+    <meta name="description"
+        content="Mesane sorunları, bağırsak sorunları, idrar kılıfları ve aralıklı kateterler hakkında kapsamlı kontinans bakımı rehberi.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #059669;
+            --primary-dark: #047857;
+            --accent: #10b981;
+            --gradient: linear-gradient(135deg, #059669, #0d9488);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            background: #f0fdf4;
+            color: #1a1a2e;
+        }
+
+        .navbar-area {
+            background: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 10px 0;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #333;
+            margin-left: 20px;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        .hero-section {
+            background: var(--gradient);
+            color: white;
+            padding: 60px 0 50px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 50px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-section p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        .breadcrumb-item a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .breadcrumb-item a:hover {
+            opacity: 1;
+        }
+
+        .breadcrumb-item.active {
+            color: white;
+            opacity: 1;
+        }
+
+        /* Section cards */
+        .section-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(5, 150, 105, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            border: 1px solid rgba(5, 150, 105, 0.1);
+        }
+
+        .section-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(5, 150, 105, 0.15);
+        }
+
+        .card-icon-area {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-icon-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .section-card:hover .card-icon-area img {
+            transform: scale(1.05);
+        }
+
+        .section-card .card-body {
+            padding: 1.8rem 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .section-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .section-card ul {
+            padding-left: 18px;
+            margin-top: 10px;
+        }
+
+        .section-card ul li {
+            color: #555;
+            padding: 3px 0;
+        }
+
+        .product-badge {
+            background: #f0fdf4;
+            border-radius: 30px;
+            padding: 12px 18px;
+            margin-top: 15px;
+        }
+
+        .product-badge strong {
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .product-tag {
+            background: white;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            border-radius: 50px;
+            padding: 4px 14px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .product-tag:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Önerilen Ürün Kartları (section-card içinde) */
+        .product-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 16px;
+            margin-top: 15px;
+        }
+
+        .product-card-sm {
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e8f0f8;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card-sm:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(5, 150, 105, 0.18);
+            border-color: var(--primary);
+        }
+
+        .product-card-sm .pc-img {
+            width: 100%;
+            height: 130px;
+            object-fit: contain;
+            padding: 12px;
+            background: linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%);
+            transition: transform 0.35s ease;
+        }
+
+        .product-card-sm:hover .pc-img {
+            transform: scale(1.05);
+        }
+
+        .product-card-sm .pc-body {
+            padding: 14px 10px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-card-sm .pc-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+
+        .product-card-sm .pc-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-top: 4px;
+            transition: gap 0.3s ease;
+        }
+
+        .product-card-sm:hover .pc-link {
+            gap: 8px;
+        }
+
+        @media (max-width: 576px) {
+            .product-cards-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .product-card-sm .pc-img {
+                height: 100px;
+                padding: 8px;
+            }
+
+            .product-card-sm .pc-body {
+                padding: 10px 8px;
+            }
+
+            .product-card-sm .pc-title {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Info boxes */
+        .info-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .info-card h2 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* Stats */
+        .stat-box {
+            background: white;
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(5, 150, 105, 0.15);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-box h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .stat-box p {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* Feature boxes */
+        .feature-box {
+            background: white;
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(5, 150, 105, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .feature-box h5 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .feature-box p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        .footer-note {
+            background: #1a2b3c;
+            color: white;
+            padding: 30px 0;
+            margin-top: 60px;
+            text-align: center;
+            border-radius: 40px 40px 0 0;
+        }
+
+        .footer-note h3 {
+            font-weight: 300;
+            font-size: 2rem;
+        }
+
+        .footer-note h3 strong {
+            font-weight: 700;
+            color: #34d399;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar-area">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../upload/396e08540e.png" alt="SembolTibbi" style="height: 50px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Ana Sayfa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../hakkimizda.html">Hakkımızda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../urun/index.html">Ürünler</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="../bakimlar.html">Bakımlar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="fw-bold"><i class="fas fa-heartbeat me-3"></i>Kontinans Bakımı Rehberi</h1>
+            <p class="lead">Mesane ve Bağırsak Kontrolü – Doğru ürünlerle daha özgür bir yaşam!</p>
+            <nav aria-label="breadcrumb" class="mt-4">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="../index.html">Ana Sayfa</a></li>
+                    <li class="breadcrumb-item"><a href="../bakimlar.html">Bakımlar</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Kontinans Bakımı</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- İstatistikler -->
+    <div class="container mb-5">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="stat-box">
+                    <div class="stat-number">%20+</div>
+                    <h5>40 Yaş Üzeri Bireyler</h5>
+                    <p>40 yaş üzerindeki bireylerin %20'sinden fazlasında üriner rahatsızlıklar görülmektedir.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-box">
+                    <div class="stat-number"><i class="fas fa-users" style="font-size:2.5rem;"></i></div>
+                    <h5>Milyonlarca İnsan</h5>
+                    <p>Dünya genelinde milyonlarca insan mesane ve bağırsak kontrolü sorunları ile yaşamaktadır.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-box">
+                    <div class="stat-number"><i class="fas fa-check-circle" style="font-size:2.5rem;"></i></div>
+                    <h5>Çözüm Mevcut</h5>
+                    <p>Modern tıbbi ürünler ile kontinans sorunlarına etkili ve konforlu çözümler sunulmaktadır.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kontinans Nedir -->
+    <div class="container mb-5">
+        <div class="info-card">
+            <h2><i class="fas fa-info-circle me-2"></i>Kontinans ve İnkontinans Nedir?</h2>
+            <p style="color:#555; font-size: 1.1rem;"><strong>Kontinans</strong>, idrar ve dışkı kontrolünün
+                sağlanabilmesi durumudur. <strong>İnkontinans</strong> ise bu kontrolün kaybedilmesidir. Üriner
+                inkontinans (idrar kaçırma) ve fekal inkontinans (dışkı kaçırma) olarak iki ana gruba ayrılır.</p>
+            <p style="color:#555; font-size: 1.1rem;">Mesane sorunları; idrar sızıntısı (üriner inkontinans) veya
+                mesaneyi tam olarak boşaltamama (idrar retansiyonu) şeklinde ortaya çıkabilir. Her iki durumda da uygun
+                ürünler ve bakım yöntemleri ile yaşam kalitesi büyük ölçüde artırılabilir.</p>
+        </div>
+    </div>
+
+    <!-- 4 Ana Kategori Kartları -->
+    <div class="container mb-5">
+        <h2 class="text-center fw-bold mb-5" style="color: var(--primary);">Bakım Kategorileri</h2>
+        <div class="row g-4">
+
+            <!-- Mesane Sorunları -->
+            <div class="col-lg-6">
+                <div class="section-card">
+                    <div class="card-icon-area">
+                        <img src="../upload/61cbc653f5.jpg" alt="Mesane Sorunları">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="section-title"><i class="fas fa-tint me-2"></i>Mesane Sorunları</h3>
+                        <p>Mesane sorunları, idrar sızıntısı (üriner inkontinans) veya mesaneyi tam boşaltamama (idrar
+                            retansiyonu) şeklinde ortaya çıkabilir. Yaşam kalitesini etkileyen bu durumlar, doğru tanı
+                            ve uygun ürün seçimiyle yönetilebilir.</p>
+                        <ul>
+                            <li><strong>Stres inkontinans:</strong> Öksürme, hapşırma veya egzersiz sırasında kaçırma
+                            </li>
+                            <li><strong>Urge inkontinans:</strong> Ani ve güçlü idrar hissi ile kaçırma</li>
+                            <li><strong>Taşma inkontinansı:</strong> Mesane tam boşalamadığında oluşan sürekli sızıntı
+                            </li>
+                            <li><strong>İdrar retansiyonu:</strong> Mesanenin tamamen boşaltılamaması</li>
+                        </ul>
+                        <div class="mt-3">
+                            <strong style="color: var(--primary);"><i class="fas fa-box-open me-1"></i>Önerilen
+                                Çözümler</strong>
+                            <div class="product-cards-grid">
+                                <a href="../urun-detay/prolen-jel.html" class="product-card-sm">
+                                    <img src="../upload/0d531c2773.png" alt="Aralıklı Kateter" class="pc-img"
+                                        loading="lazy">
+                                    <div class="pc-body">
+                                        <div class="pc-title">Aralıklı Kateter</div>
+                                        <span class="pc-link">İncele <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                                <a href="../urun-detay/prolen-jel.html" class="product-card-sm">
+                                    <img src="../upload/0d531c2773.png" alt="İdrar Kılıfı" class="pc-img"
+                                        loading="lazy">
+                                    <div class="pc-body">
+                                        <div class="pc-title">İdrar Kılıfı</div>
+                                        <span class="pc-link">İncele <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                                <a href="../urun-detay/prolen-jel.html" class="product-card-sm">
+                                    <img src="../upload/0d531c2773.png" alt="İdrar Torbası" class="pc-img"
+                                        loading="lazy">
+                                    <div class="pc-body">
+                                        <div class="pc-title">İdrar Torbası</div>
+                                        <span class="pc-link">İncele <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bağırsak Sorunları -->
+            <div class="col-lg-6">
+                <div class="section-card">
+                    <div class="card-icon-area">
+                        <img src="../upload/61cbc653f5.jpg" alt="Bağırsak Sorunları">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="section-title" style="color:#b45309;"><i class="fas fa-diagnoses me-2"></i>Bağırsak
+                            Sorunları</h3>
+                        <p>Nörojenik bağırsak veya diğer nedenlerle ortaya çıkan fekal inkontinans (dışkı kaçırma) ve
+                            kronik kabızlık, günlük yaşamı ciddi şekilde etkileyebilir. Doğru bakım programı ve
+                            ürünlerle bu sorunlar kontrol altına alınabilir.</p>
+                        <ul>
+                            <li><strong>Fekal inkontinans:</strong> Dışkı kontrolünün kaybedilmesi</li>
+                            <li><strong>Nörojenik bağırsak:</strong> Sinir hasarına bağlı bağırsak fonksiyon bozukluğu
+                            </li>
+                            <li><strong>Kronik kabızlık:</strong> Düzenli bağırsak hareketlerinin sağlanamaması</li>
+                        </ul>
+                        <div class="mt-3">
+                            <strong style="color: var(--primary);"><i class="fas fa-box-open me-1"></i>Önerilen
+                                Çözümler</strong>
+                            <div class="product-cards-grid">
+                                <a href="../urun-detay/prolen-jel.html" class="product-card-sm">
+                                    <img src="../upload/0d531c2773.png" alt="Anal Tıpa" class="pc-img" loading="lazy">
+                                    <div class="pc-body">
+                                        <div class="pc-title">Anal Tıpa</div>
+                                        <span class="pc-link">İncele <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                                <a href="../urun-detay/prolen-jel.html" class="product-card-sm">
+                                    <img src="../upload/0d531c2773.png" alt="Transanal İrrigasyon" class="pc-img"
+                                        loading="lazy">
+                                    <div class="pc-body">
+                                        <div class="pc-title">Transanal İrrigasyon</div>
+                                        <span class="pc-link">İncele <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                                <a href="../urun-detay/prolen-jel.html" class="product-card-sm">
+                                    <img src="../upload/0d531c2773.png" alt="Bağırsak Bakım Programı" class="pc-img"
+                                        loading="lazy">
+                                    <div class="pc-body">
+                                        <div class="pc-title">Bağırsak Bakım Programı</div>
+                                        <span class="pc-link">İncele <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İdrar Kılıfları ve İdrar Torbaları -->
+            <div class="col-lg-6">
+                <div class="section-card">
+                    <div class="card-icon-area">
+                        <img src="../upload/61cbc653f5.jpg" alt="İdrar Kılıfları ve Torbaları">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="section-title" style="color:#2563eb;"><i class="fas fa-shield-alt me-2"></i>İdrar
+                            Kılıfları ve İdrar Torbaları</h3>
+                        <p>İdrar sızıntısı yaşayan erkekler için Conveen® idrar atma kılıfları etkili ve konforlu bir
+                            çözüm sunar. Kılıf penis üzerine yerleştirilir ve bacağa bağlı bir idrar torbasına
+                            bağlanarak güvenli idrar toplama sağlanır.</p>
+                        <ul>
+                            <li><strong>Conveen® İdrar Kılıfı:</strong> Silikon yapısı ile cilde nazik</li>
+                            <li><strong>İdrar Torbaları:</strong> Gündüz ve gece kullanımı için farklı kapasiteler</li>
+                            <li><strong>Bacak Bağı:</strong> Torbanın güvenli sabitlenmesi için</li>
+                        </ul>
+                        <div class="mt-3">
+                            <strong style="color: var(--primary);"><i class="fas fa-box-open me-1"></i>Önerilen
+                                Ürünler</strong>
+                            <div class="product-cards-grid">
+                                <a href="../urun-detay/prolen-jel.html" class="product-card-sm">
+                                    <img src="../upload/0d531c2773.png" alt="Conveen® İdrar Kılıfı" class="pc-img"
+                                        loading="lazy">
+                                    <div class="pc-body">
+                                        <div class="pc-title">Conveen® İdrar Kılıfı</div>
+                                        <span class="pc-link">İncele <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                                <a href="../urun-detay/prolen-jel.html" class="product-card-sm">
+                                    <img src="../upload/0d531c2773.png" alt="İdrar Torbası" class="pc-img"
+                                        loading="lazy">
+                                    <div class="pc-body">
+                                        <div class="pc-title">İdrar Torbası</div>
+                                        <span class="pc-link">İncele <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                                <a href="../urun-detay/prolen-jel.html" class="product-card-sm">
+                                    <img src="../upload/0d531c2773.png" alt="Bacak Bağı" class="pc-img" loading="lazy">
+                                    <div class="pc-body">
+                                        <div class="pc-title">Bacak Bağı</div>
+                                        <span class="pc-link">İncele <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aralıklı Kateterler -->
+            <div class="col-lg-6">
+                <div class="section-card">
+                    <div class="card-icon-area">
+                        <img src="../upload/61cbc653f5.jpg" alt="Aralıklı Kateterler">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="section-title" style="color:#4f46e5;"><i class="fas fa-syringe me-2"></i>Aralıklı
+                            Kateterler</h3>
+                        <p>Mesaneyi düzenli aralıklarla boşaltmak için kullanılan aralıklı kateterler (TAK), idrar
+                            retansiyonu yaşayan hastalar için güvenli ve etkili bir yöntemdir. Coloplast EasiCath® ve
+                            SpeediCath® gibi hidrofilik kateterler konforlu kateterizasyon sağlar.</p>
+                        <ul>
+                            <li><strong>EasiCath®:</strong> Kolay kullanımlı hidrofilik kateter</li>
+                            <li><strong>SpeediCath®:</strong> Anında kullanıma hazır, önceden aktive edilmiş</li>
+                            <li><strong>Tek kullanımlık:</strong> Enfeksiyon riskini en aza indirir</li>
+                        </ul>
+                        <div class="mt-3">
+                            <strong style="color: var(--primary);"><i class="fas fa-box-open me-1"></i>Önerilen
+                                Ürünler</strong>
+                            <div class="product-cards-grid">
+                                <a href="../urun-detay/prolen-jel.html" class="product-card-sm">
+                                    <img src="../upload/0d531c2773.png" alt="PrimaCath® Kateter" class="pc-img"
+                                        loading="lazy">
+                                    <div class="pc-body">
+                                        <div class="pc-title">PrimaCath® Kateter</div>
+                                        <span class="pc-link">İncele <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                                <a href="../urun-detay/prolen-jel.html" class="product-card-sm">
+                                    <img src="../upload/0d531c2773.png" alt="Easicath® Kateter" class="pc-img"
+                                        loading="lazy">
+                                    <div class="pc-body">
+                                        <div class="pc-title">Easicath® Kateter</div>
+                                        <span class="pc-link">İncele <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                                <a href="../urun-detay/prolen-jel.html" class="product-card-sm">
+                                    <img src="../upload/0d531c2773.png" alt="Kendinden Jelli Sonda" class="pc-img"
+                                        loading="lazy">
+                                    <div class="pc-body">
+                                        <div class="pc-title">Kendinden Jelli Sonda</div>
+                                        <span class="pc-link">İncele <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Yaşam Kalitesi İpuçları -->
+    <div class="container mb-5">
+        <h2 class="text-center fw-bold mb-5" style="color: var(--primary);">Yaşam Kalitesini Artırma İpuçları</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-utensils"></i></div>
+                    <h5>Beslenme</h5>
+                    <p>Kafein, alkol ve baharatlı yiyeceklerden kaçının. Yeterli su tüketimi önemlidir. Lifli gıdalar
+                        bağırsak sağlığını destekler.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-running"></i></div>
+                    <h5>Pelvik Taban Egzersizleri</h5>
+                    <p>Kegel egzersizleri mesane kontrolünü güçlendirir. Düzenli egzersiz programı ile inkontinans
+                        semptomları azaltılabilir.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h5>Düzenli Takip</h5>
+                    <p>Doktorunuzla düzenli kontroller yaptırın. İşeme günlüğü tutarak mesane alışkanlıklarınızı takip
+                        edin.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profesyonel Destek -->
+    <div class="container mb-5">
+        <div class="info-card"
+            style="background: linear-gradient(135deg, #f0fdf4, #d1fae5); border: 1px solid rgba(5,150,105,0.2);">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h2><i class="fas fa-hand-holding-medical me-2"></i>Profesyonel Destek</h2>
+                    <p style="color:#555; font-size: 1.1rem;">Kontinans bakımı konusunda uzman ekibimiz size rehberlik
+                        etmektedir. Doğru ürün seçimi, bakım programı oluşturma ve günlük yaşam ipuçları için bize
+                        ulaşın.</p>
+                    <a href="https://api.whatsapp.com/send?phone=+905317721888&text=Merhaba%20kontinans%20bakım%20ürünleri%20hakkında%20bilgi%20almak%20istiyorum."
+                        target="_blank" class="btn btn-lg mt-2"
+                        style="background: var(--gradient); color: white; border-radius: 50px; padding: 12px 30px; font-weight: 600;">
+                        <i class="fab fa-whatsapp me-2"></i>WhatsApp ile Danışın
+                    </a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-user-nurse" style="font-size: 8rem; color: var(--primary); opacity: 0.3;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-note">
+        <div class="container">
+            <h3 class="fw-light">"<strong>Sembol Tıbbi Malzeme</strong> ile Kontinans Bakımında Yanınızdayız!"</h3>
+            <p class="mt-3 opacity-75">© 2026 SembolTibbi – Tıbbi Cihaz ve Bakım Ürünlerinde Güvenilir Çözümler</p>
+        </div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone=+905317721888&text=Merhaba%20kontinans%20bakım%20ürünleri%20hakkında%20bilgi%20almak%20istiyorum."
+        class="whatsapp-float" target="_blank"
+        style="position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 5px 20px rgba(37,211,102,0.4); z-index: 999; animation: pulse 2s infinite;">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            }
+
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+            }
+        }
+    </style>
+</body>
+
+</html>

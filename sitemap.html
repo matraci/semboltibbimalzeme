@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SembolTibbi - Site Haritası</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8fffe 0%, #e8f5f2 100%);
+            padding: 40px 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #0d6efd;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-left: 4px solid #0d6efd;
+            border-radius: 10px;
+        }
+        
+        .section h2 {
+            color: #0d6efd;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .link-item {
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: #0d6efd;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .link-item:hover {
+            background: #0d6efd;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(13, 110, 253, 0.2);
+        }
+        
+        .icon {
+            font-size: 1.3rem;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat {
+            padding: 20px;
+            background: linear-gradient(135deg, #0d6efd 0%, #20c997 100%);
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #0d6efd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 SembolTibbi Web Sitesi</h1>
+        <p class="subtitle">Sağlığınız Bizim Önceliğimiz - 25 Yıllık Tecrübe</p>
+        
+        <!-- İstatistikler -->
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-number">72+</span>
+                <span class="stat-label">Web Sayfası</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Ürün Detayı</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">11+</span>
+                <span class="stat-label">Bakım Rehberi</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">150+</span>
+                <span class="stat-label">Medya Dosyası</span>
+            </div>
+        </div>
+        
+        <!-- Ana Sayfalar -->
+        <div class="section">
+            <h2>📄 Ana Sayfalar</h2>
+            <div class="links">
+                <a href="index.html" class="link-item">
+                    <span class="icon">🏠</span>
+                    <span>Ana Sayfa</span>
+                </a>
+                <a href="hakkimizda.html" class="link-item">
+                    <span class="icon">ℹ️</span>
+                    <span>Hakkımızda</span>
+                </a>
+                <a href="bakimlar.html" class="link-item">
+                    <span class="icon">📋</span>
+                    <span>Bakımlar</span>
+                </a>
+                <a href="iletisim.html" class="link-item">
+                    <span class="icon">📞</span>
+                    <span>İletişim</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Ürün Sayfaları -->
+        <div class="section">
+            <h2>🛍️ Ürün Kategorileri</h2>
+            <div class="links">
+                <a href="urun/index.html" class="link-item">
+                    <span class="icon">📦</span>
+                    <span>Tüm Ürünler</span>
+                </a>
+                <a href="urun/ostomi-urunleri.html" class="link-item">
+                    <span class="icon">💊</span>
+                    <span>Ostomi Ürünleri</span>
+                </a>
+                <a href="urun/yara-bakim.html" class="link-item">
+                    <span class="icon">🩹</span>
+                    <span>Yara Bakımı</span>
+                </a>
+                <a href="urun/kontinans-bakim-urunleri.html" class="link-item">
+                    <span class="icon">💙</span>
+                    <span>Kontinans</span>
+                </a>
+                <a href="urun/sonda-urunleri.html" class="link-item">
+                    <span class="icon">💉</span>
+                    <span>Sonda Ürünleri</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Kategori Sayfaları -->
+        <div class="section">
+            <h2>📚 Ürün Kategorileri (Detaylı)</h2>
+            <div class="links">
+                <a href="kategori/index.html" class="link-item">
+                    <span class="icon">📑</span>
+                    <span>Kategori Ana Sayfa</span>
+                </a>
+                <a href="kategori/stoma-torbalar.html" class="link-item">
+                    <span class="icon">🎯</span>
+                    <span>Stoma Torbaları</span>
+                </a>
+                <a href="kategori/stoma-adaptoru.html" class="link-item">
+                    <span class="icon">🔗</span>
+                    <span>Stoma Adaptörü</span>
+                </a>
+                <a href="kategori/stoma-bakim-urunleri.html" class="link-item">
+                    <span class="icon">✨</span>
+                    <span>Stoma Bakım</span>
+                </a>
+                <a href="kategori/yara-bakim-urunleri.html" class="link-item">
+                    <span class="icon">🌿</span>
+                    <span>Yara Bakım</span>
+                </a>
+                <a href="kategori/sondalar.html" class="link-item">
+                    <span class="icon">🔬</span>
+                    <span>Sondalar</span>
+                </a>
+                <a href="kategori/bakim-urunleri.html" class="link-item">
+                    <span class="icon">🧴</span>
+                    <span>Bakım Ürünleri</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Bakım Rehberleri -->
+        <div class="section">
+            <h2>📖 Bakım Rehberleri</h2>
+            <div class="info-box">
+                <strong>11+ Detaylı Bakım Rehberi Sayfası</strong><br>
+                Ostomi, Yara, Kontinans, Sonda ve daha fazlası için adım adım rehberler
+            </div>
+            <div class="links">
+                <a href="bakimlar_sayfalari/index.html" class="link-item">
+                    <span class="icon">📚</span>
+                    <span>Bakım Rehberleri Index</span>
+                </a>
+                <a href="bakimlar_sayfalari/stoma-bakimi.html" class="link-item">
+                    <span class="icon">🏥</span>
+                    <span>Stoma Bakımı</span>
+                </a>
+                <a href="bakimlar_sayfalari/yara-bakimi.html" class="link-item">
+                    <span class="icon">🩺</span>
+                    <span>Yara Bakımı</span>
+                </a>
+                <a href="bakimlar_sayfalari/kolostomi-bakimi.html" class="link-item">
+                    <span class="icon">👤</span>
+                    <span>Kolostomi Bakımı</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Ürün Detay Sayfaları -->
+        <div class="section">
+            <h2>🎁 Ürün Detayları (50+ Ürün)</h2>
+            <div class="info-box">
+                <strong>50+ Ürün Detay Sayfası</strong><br>
+                Her ürünün özellikleri, kullanımı ve fiyatlandırması hakkında detaylı bilgi
+            </div>
+            <div class="links">
+                <a href="urun-detay/index.html" class="link-item">
+                    <span class="icon">📋</span>
+                    <span>Ürün Detayları Index</span>
+                </a>
+                <a href="urun-detay/adaptor-uyumlu-kolostomi-ve-ileostomi-torbalar.html" class="link-item">
+                    <span class="icon">🔗</span>
+                    <span>Adaptör Uyumlu Torbalar</span>
+                </a>
+                <a href="urun-detay/brava-yapiskan-cikartici-sprey.html" class="link-item">
+                    <span class="icon">💨</span>
+                    <span>Brava Çıkartıcı Sprey</span>
+                </a>
+                <a href="urun-detay/biatain-yapiskanli-yara-ortuleri.html" class="link-item">
+                    <span class="icon">🩹</span>
+                    <span>Biatain Yara Örtüleri</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Ürün Listeleri -->
+        <div class="section">
+            <h2>📦 Ürün Listeleri</h2>
+            <div class="info-box">
+                <strong>6+ Ürün Kategorisi</strong><br>
+                Kategoriye göre ürün listeleri ve filtreleme
+            </div>
+            <div class="links">
+                <a href="urunler/stoma-torbalar" class="link-item">
+                    <span class="icon">🎯</span>
+                    <span>Stoma Torbaları</span>
+                </a>
+                <a href="urunler/stoma-adaptoru" class="link-item">
+                    <span class="icon">🔗</span>
+                    <span>Stoma Adaptörü</span>
+                </a>
+                <a href="urunler/stoma-bakim-urunleri" class="link-item">
+                    <span class="icon">✨</span>
+                    <span>Stoma Bakım Ürünleri</span>
+                </a>
+                <a href="urunler/yara-bakim-urunleri" class="link-item">
+                    <span class="icon">🌿</span>
+                    <span>Yara Bakım Ürünleri</span>
+                </a>
+                <a href="urunler/sondalar" class="link-item">
+                    <span class="icon">🔬</span>
+                    <span>Sondalar</span>
+                </a>
+                <a href="urunler/bakim-urunleri" class="link-item">
+                    <span class="icon">🧴</span>
+                    <span>Bakım Ürünleri</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- İletişim -->
+        <div class="section" style="background: linear-gradient(135deg, #e3f2fd 0%, #f0f4ff 100%); border-left-color: #0d6efd;">
+            <h2>📞 İletişim</h2>
+            <div class="info-box" style="background: white; border-color: #0d6efd;">
+                <strong>SembolTibbi</strong><br><br>
+                📱 <strong>Telefon</strong>: +90 531 772 1888<br>
+                📧 <strong>Email</strong>: info@semboltibbi.com<br>
+                💬 <strong>WhatsApp</strong>: <a href="https://api.whatsapp.com/send?phone=+905317721888" target="_blank">Canlı Sohbet</a><br>
+                🏥 <strong>Adres</strong>: İstanbul, Türkiye<br><br>
+                <strong>⏰ Çalışma Saatleri</strong>: 24/7 Destek
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #ddd; color: #666;">
+            <p><strong>© 2025 SembolTibbi</strong></p>
+            <p>25 yılı aşkın süredir sağlık sektöründe güvenilir çözümler sunuyoruz</p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">
+                <a href="index.html" style="color: #0d6efd; text-decoration: none;">Ana Sayfa</a> | 
+                <a href="hakkimizda.html" style="color: #0d6efd; text-decoration: none;">Hakkımızda</a> | 
+                <a href="urun/" style="color: #0d6efd; text-decoration: none;">Ürünler</a> | 
+                <a href="bakimlar.html" style="color: #0d6efd; text-decoration: none;">Bakımlar</a> | 
+                <a href="iletisim.html" style="color: #0d6efd; text-decoration: none;">İletişim</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

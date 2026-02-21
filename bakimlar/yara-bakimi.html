@@ -1,0 +1,565 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Yara Bakım Rehberi | SembolTibbi</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0099cc;
+            --primary-dark: #0077aa;
+            --gradient: linear-gradient(135deg, #0099cc, #00c6ff);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            background: #f4f8fb;
+            color: #1a1a2e;
+        }
+
+        /* Navbar (site ile uyumlu) */
+        .navbar-area {
+            background: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 10px 0;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #333;
+            margin-left: 20px;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .hero-section {
+            background: var(--gradient);
+            color: white;
+            padding: 60px 0 50px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 50px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-section p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        /* Kart tasarımı */
+        .wound-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 153, 204, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            border: 1px solid rgba(0, 153, 204, 0.1);
+            cursor: pointer;
+        }
+
+        .wound-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 153, 204, 0.2);
+        }
+
+        .card-img-wrapper {
+            height: 200px;
+            overflow: hidden;
+            background: #e6f3f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .wound-card:hover .card-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .img-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #d4e9f2, #b0d4e6);
+            color: var(--primary);
+            font-size: 4rem;
+        }
+
+        .card-body {
+            padding: 1.8rem 1.5rem;
+        }
+
+        .wound-type {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            border-left: 6px solid var(--primary);
+            padding-left: 15px;
+        }
+
+        .desc-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .desc-list li {
+            padding: 5px 0 5px 28px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%230099cc"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>') left center no-repeat;
+            background-size: 18px;
+        }
+
+        .product-badge {
+            background: #f0f9ff;
+            border-radius: 30px;
+            padding: 12px 18px;
+            margin-top: 15px;
+        }
+
+        .product-badge strong {
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .product-tag {
+            background: white;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            border-radius: 50px;
+            padding: 4px 14px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .product-tag:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Feature kutuları */
+        .feature-box {
+            background: white;
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 153, 204, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .feature-box h5 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .feature-box p {
+            color: #555;
+        }
+
+        /* Footer */
+        .footer-note {
+            background: #1a2b3c;
+            color: white;
+            padding: 30px 0;
+            margin-top: 60px;
+            text-align: center;
+            border-radius: 40px 40px 0 0;
+        }
+
+        .footer-note h3 {
+            font-weight: 300;
+            font-size: 2rem;
+        }
+
+        .footer-note h3 strong {
+            font-weight: 700;
+            color: #00c6ff;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .breadcrumb-item a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .breadcrumb-item a:hover {
+            opacity: 1;
+        }
+
+        .breadcrumb-item.active {
+            color: white;
+            opacity: 1;
+        }
+
+        /* Link wrapper for cards */
+        a.card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .wound-type {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Basit navigasyon (siteyle uyumlu) -->
+    <div class="navbar-area">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../upload/396e08540e.png" alt="SembolTibbi" style="height: 50px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Ana Sayfa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../hakkimizda.html">Hakkımızda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../urun/index.html">Ürünler</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="../bakimlar.html">Bakımlar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Bölümü -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="fw-bold"><i class="fas fa-band-aid me-3"></i>Yara Tipine Göre Ürün Rehberi</h1>
+            <p class="lead">“Yara ile Daha Az Gün” – 3DFit® Teknolojisi ile Her Defasında Mükemmel Uyum!</p>
+            <nav aria-label="breadcrumb" class="mt-4">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="../index.html">Ana Sayfa</a></li>
+                    <li class="breadcrumb-item"><a href="../bakimlar.html">Bakımlar</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Yara Bakım Rehberi</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Ana içerik: Yara Kartları -->
+    <div class="container mb-5">
+        <div class="row g-4">
+            <!-- Yüzeyel Yara -->
+            <div class="col-lg-4 col-md-6">
+                <a href="yuzeyel-yara.html" class="card-link">
+                    <div class="wound-card">
+                        <div class="card-img-wrapper">
+                            <img src="../upload/yara-yuzeysel.jpg" alt="Yüzeyel Yara">
+                        </div>
+                        <div class="card-body">
+                            <div class="wound-type">Yüzeyel Yara</div>
+                            <ul class="desc-list">
+                                <li>Kemik çıkıntı bölgesi</li>
+                                <li>Eksuda yok</li>
+                                <li>Cilt bütünlüğü bozulmamış</li>
+                            </ul>
+                            <div class="product-badge">
+                                <strong><i class="fas fa-check-circle me-1"></i>Önerilen Ürünler</strong>
+                                <div class="product-list">
+                                    <span class="product-tag">Comfeel® Şeffaf</span>
+                                    <span class="product-tag">Comfeel® Plus</span>
+                                    <span class="product-tag">Comfeel® Bariyer Krem</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Post-Op -->
+            <div class="col-lg-4 col-md-6">
+                <a href="post-op-cerrahi.html" class="card-link">
+                    <div class="wound-card">
+                        <div class="card-img-wrapper">
+                            <img src="../upload/yara-post-op.jpg" alt="Post-Op (Cerrahi)">
+                        </div>
+                        <div class="card-body">
+                            <div class="wound-type">Post-Op (Cerrahi)</div>
+                            <ul class="desc-list">
+                                <li>Cerrahi sonrası insizyon</li>
+                                <li>Eksuda yok</li>
+                                <li>İnsizyon yönetimi</li>
+                            </ul>
+                            <div class="product-badge">
+                                <strong><i class="fas fa-check-circle me-1"></i>Önerilen Ürünler</strong>
+                                <div class="product-list">
+                                    <span class="product-tag">Comfeel® Şeffaf</span>
+                                    <span class="product-tag">Biatain® Silicone</span>
+                                    <span class="product-tag">Biatain® Silicone Ag</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Basınç Ülseri -->
+            <div class="col-lg-4 col-md-6">
+                <a href="basinc-ulseri.html" class="card-link">
+                    <div class="wound-card">
+                        <div class="card-img-wrapper">
+                            <img src="../upload/yarab-asinc-ulser.jpg" alt="Basınç Ülseri">
+                        </div>
+                        <div class="card-body">
+                            <div class="wound-type">Basınç Ülseri</div>
+                            <ul class="desc-list">
+                                <li>Kırmızı renkte, enfekte</li>
+                                <li>Eksudalı, kaviteli</li>
+                            </ul>
+                            <div class="product-badge">
+                                <strong><i class="fas fa-check-circle me-1"></i>Önerilen Ürünler</strong>
+                                <div class="product-list">
+                                    <span class="product-tag">Biatain® Aljinat Ag</span>
+                                    <span class="product-tag">Biatain® Sakrum</span>
+                                    <span class="product-tag">Biatain® Silicone Sakrum</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Diyabetik Ayak Ülseri -->
+            <div class="col-lg-4 col-md-6">
+                <a href="diyabetik-ayak-ulseri.html" class="card-link">
+                    <div class="wound-card">
+                        <div class="card-img-wrapper">
+                            <img src="../upload/yara-diyabetik-ayak.jpg" alt="Diyabetik Ayak Ülseri">
+                        </div>
+                        <div class="card-body">
+                            <div class="wound-type">Diyabetik Ayak Ülseri</div>
+                            <ul class="desc-list">
+                                <li>Kemik çıkıntı bölgesi</li>
+                                <li>Az eksudalı</li>
+                                <li>Cilt bütünlüğü bozulmuş</li>
+                            </ul>
+                            <div class="product-badge">
+                                <strong><i class="fas fa-check-circle me-1"></i>Önerilen Ürünler</strong>
+                                <div class="product-list">
+                                    <span class="product-tag">Biatain® Topuk</span>
+                                    <span class="product-tag">Biatain® Silicone Topuk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Venöz Ülser -->
+            <div class="col-lg-4 col-md-6">
+                <a href="venoz-ulser.html" class="card-link">
+                    <div class="wound-card">
+                        <div class="card-img-wrapper">
+                            <img src="../upload/yara-venoz-ulser.jpg" alt="Venöz Ülser">
+                        </div>
+                        <div class="card-body">
+                            <div class="wound-type">Venöz Ülser</div>
+                            <ul class="desc-list">
+                                <li>Kırmızı renkte, enfekte</li>
+                                <li>Eksudalı</li>
+                            </ul>
+                            <div class="product-badge">
+                                <strong><i class="fas fa-check-circle me-1"></i>Önerilen Ürünler</strong>
+                                <div class="product-list">
+                                    <span class="product-tag">Biatain® IBU</span>
+                                    <span class="product-tag">Biatain® Silicone Ag</span>
+                                    <span class="product-tag">Biatain® Aljinat Ag</span>
+                                    <span class="product-tag">Biatain® Yapışkan Köpük</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Arteriyel Ülser -->
+            <div class="col-lg-4 col-md-6">
+                <a href="arteriyel-ulser.html" class="card-link">
+                    <div class="wound-card">
+                        <div class="card-img-wrapper">
+                            <img src="../upload/yara-arterier-ulser.jpg" alt="Arteriyel Ülser">
+                        </div>
+                        <div class="card-body">
+                            <div class="wound-type">Arteriyel Ülser</div>
+                            <ul class="desc-list">
+                                <li>Enfekte, eksudalı</li>
+                                <li>Cilt bütünlüğü bozulmuş</li>
+                            </ul>
+                            <div class="product-badge">
+                                <strong><i class="fas fa-check-circle me-1"></i>Önerilen Ürünler</strong>
+                                <div class="product-list">
+                                    <span class="product-tag">Biatain® IBU</span>
+                                    <span class="product-tag">Biatain® Silicone Ag</span>
+                                    <span class="product-tag">Biatain® Aljinat Ag</span>
+                                    <span class="product-tag">Biatain® Yapışkan Köpük</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Nekrotik Doku -->
+            <div class="col-lg-4 col-md-6">
+                <a href="nekrotik-doku.html" class="card-link">
+                    <div class="wound-card">
+                        <div class="card-img-wrapper">
+                            <img src="../upload/yara-nekrotik-doku.jpg" alt="Nekrotik Doku">
+                        </div>
+                        <div class="card-body">
+                            <div class="wound-type">Nekrotik Doku</div>
+                            <ul class="desc-list">
+                                <li>Siyah renkte, kabuklu</li>
+                                <li>Eksudasız</li>
+                            </ul>
+                            <div class="product-badge">
+                                <strong><i class="fas fa-check-circle me-1"></i>Önerilen Ürünler</strong>
+                                <div class="product-list">
+                                    <span class="product-tag">Comfeel® Şeffaf</span>
+                                    <span class="product-tag">Comfeel® Plus</span>
+                                    <span class="product-tag">Purilon® Jel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Teknoloji Özellikleri (3 kutu) -->
+    <div class="container my-5">
+        <h2 class="text-center fw-bold mb-5" style="color: var(--primary);">3DFit® Teknolojisinin Avantajları</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h5>Yara Yatağına Tam Uyum</h5>
+                    <p>Eksuda ile temasa geçtiğinde yara yatağına yerleşir ve eksuda birikimini azaltır.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <h5>Dikey Emilim</h5>
+                    <p>İçeriğindeki mikrokapiller yapı ile eksudayı dikey olarak emer, maserasyonu önler.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h5>Eksudayı Kilitler</h5>
+                    <p>Eksuda örtü içinde hapsedilir, baskı altında bile sızdırmazlık korunur.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer notu: 3DFit sloganı -->
+    <div class="footer-note">
+        <div class="container">
+            <h3 class="fw-light">“<strong>3DFit® Teknolojisi</strong> ile Her Defasında Mükemmel Uyum!”</h3>
+            <p class="mt-3 opacity-75">© 2026 Sembol Tibbi Malzeme – Yara Bakımında Yenilikçi Çözümler</p>
+        </div>
+    </div>
+
+    <!-- WhatsApp butonu (site genelinde olduğu gibi) -->
+    <a href="https://api.whatsapp.com/send?phone=+905317721888&text=Merhaba%20yara%20bakım%20ürünleri%20hakkında%20bilgi%20almak%20istiyorum."
+        class="whatsapp-float" target="_blank"
+        style="position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 5px 20px rgba(37,211,102,0.4); z-index: 999; animation: pulse 2s infinite;">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            }
+
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+            }
+        }
+    </style>
+</body>
+
+</html>

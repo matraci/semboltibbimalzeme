@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ostomi Ürünleri | SembolTibbi</title>
+    <meta name="description"
+        content="Kolostomi, İleostomi ve Ürostomi torbaları ve bakım ürünleri - SembolTibbi">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9N4C1S2CX"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-H9N4C1S2CX');</script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #ffffff;
+            color: #111;
+            overflow-x: hidden;
+        }
+
+        .header-area {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+        }
+        .nav-link {
+            font-weight: 500;
+            color: #333;
+            margin-left: 15px;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #d63384;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: #333;
+            transition: 0.3s;
+        }
+
+        /* Sayfa başlığı */
+        .cat-hero {
+            background: linear-gradient(135deg, #f8f9ff 0%, #eef0ff 100%);
+            border-bottom: 1px solid #e0e3f0;
+            padding: 2.5rem 0 2rem;
+        }
+        .cat-hero h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 0.3rem;
+        }
+        .cat-hero .breadcrumb {
+            background: none;
+            padding: 0;
+            margin: 0;
+        }
+        .cat-hero .breadcrumb-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .cat-hero .breadcrumb-item.active {
+            color: #888;
+            font-size: 0.85rem;
+        }
+        .cat-hero .breadcrumb-item+.breadcrumb-item::before {
+            color: #aaa;
+        }
+
+        /* Sidebar kategoriler */
+        .category-sidebar {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            position: sticky;
+            top: 90px;
+        }
+        .category-sidebar h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1a1a2e;
+        }
+        .category-sidebar .list-group-item {
+            background: transparent;
+            border: none;
+            padding: 8px 0;
+            color: #555;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .category-sidebar .list-group-item:hover,
+        .category-sidebar .list-group-item.active {
+            color: #d63384;
+            font-weight: 500;
+            background: transparent;
+        }
+        .category-sidebar .list-group-item.active {
+            color: #d63384;
+            font-weight: 600;
+        }
+
+        /* Ürün kartları */
+        .pcard-wrap {
+            text-decoration: none;
+            display: block;
+            height: 100%;
+        }
+        .pcard {
+            background: #f5f5f5;
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: background 0.25s ease, box-shadow 0.25s ease;
+            height: 100%;
+            cursor: pointer;
+        }
+        .pcard:hover {
+            background: #ffffff;
+            box-shadow: 0 6px 28px rgba(0, 0, 0, 0.12);
+        }
+        .pcard-img {
+            background: #ebebeb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 220px;
+            padding: 20px;
+            transition: background 0.25s ease;
+        }
+        .pcard:hover .pcard-img {
+            background: #f5f5f5;
+        }
+        .pcard-img img {
+            max-width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+            transition: transform 0.35s ease;
+        }
+        .pcard:hover .pcard-img img {
+            transform: scale(1.06);
+        }
+        .pcard-body {
+            padding: 1rem 1.1rem 1.3rem;
+        }
+        .pcard-body h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        .pcard-link {
+            font-size: 0.8rem;
+            color: #667eea;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .pcard-link::after {
+            content: '→';
+        }
+
+        /* Kategori başlıkları */
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e0e3f0;
+        }
+
+        /* Scroll animasyon */
+        .scroll-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .scroll-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.6s ease forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Footer (kısa versiyon) */
+        .footer-section {
+            background: #1a1a2e;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+        .footer-widget h3 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .footer-widget ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-widget ul li {
+            margin-bottom: 10px;
+        }
+        .footer-widget ul li a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+        .footer-widget ul li a:hover {
+            color: white;
+        }
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-contact li {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: #ccc;
+        }
+        .footer-contact a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 20px rgba(37,211,102,0.4);
+            z-index: 999;
+            animation: pulse-whatsapp 2s infinite;
+        }
+        @keyframes pulse-whatsapp {
+            0%,100% { transform: scale(1); box-shadow: 0 5px 20px rgba(37,211,102,0.4); }
+            50% { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,0.6); }
+        }
+        .whatsapp-float:hover {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header (mevcut navbar) -->
+    <header class="header-area" id="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand logo" href="../index.html">
+                    <img src="../upload/396e08540e.png" alt="SembolTibbi">
+                </a>
+                <button class="navbar-toggler hamburger" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="collapse navbar-collapse main-menu" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Ana Sayfa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../hakkimizda.html">Hakkımızda</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="../urun/index.html">Ürünler</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../bakimlar.html">Bakımlar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sayfa Başlığı -->
+    <div class="cat-hero">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../index.html">Ana Sayfa</a></li>
+                    <li class="breadcrumb-item"><a href="../urun/index.html">Ürünler</a></li>
+                    <li class="breadcrumb-item active">Ostomi Ürünleri</li>
+                </ol>
+            </nav>
+            <h1 class="fade-in mt-2">Ostomi Ürünleri</h1>
+            <p class="fade-in" style="color:#555;font-size:0.95rem;">Kolostomi, İleostomi ve Ürostomi torbaları ve bakım ürünleri</p>
+        </div>
+    </div>
+
+    <!-- Ana İçerik: Sidebar + Ürün Listesi -->
+    <section style="background:#fff; padding: 3rem 0 4rem;">
+        <div class="container">
+            <div class="row">
+                <!-- Sol Sidebar Kategori Filtresi -->
+                <div class="col-md-3 mb-4">
+                    <div class="category-sidebar">
+                        <h4>Kategoriler</h4>
+                        <div class="list-group">
+                            <button class="list-group-item list-group-item-action active" data-category="all">Tüm Ürünler</button>
+                            <button class="list-group-item list-group-item-action" data-category="torbalar">Torbalar</button>
+                            <button class="list-group-item list-group-item-action" data-category="adaptorler">Adaptörler</button>
+                            <button class="list-group-item list-group-item-action" data-category="bakim">Günlük Bakım Ürünleri</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sağ Taraf: Ürünler -->
+                <div class="col-md-9">
+                    <!-- Torbalar Kategorisi -->
+                    <div class="category-group" data-category="torbalar">
+                        <h2 class="category-title">Torbalar</h2>
+                        <div class="row g-3">
+                            <!-- Adaptör Uyumlu Kolostomi ve İleostomi Torbalar -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/adaptor-uyumlu-kolostomi-ve-ileostomi-torbalar.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/f2d5385277.png" alt="Adaptör Uyumlu Kolostomi ve İleostomi Torbalar"></div>
+                                        <div class="pcard-body">
+                                            <h4>Adaptör Uyumlu Kolostomi ve İleostomi Torbalar</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Kolostomi Torbası Tek Parça -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/kolostomi-torbasi-tek-parca.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/dc4fe5c7bc.png" alt="Kolostomi Torbası Tek Parça"></div>
+                                        <div class="pcard-body">
+                                            <h4>Kolostomi Torbası Tek Parça</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Ürostomi Torbası -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/urostomi-torbasi.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/1cbae32de4.png" alt="Ürostomi Torbası"></div>
+                                        <div class="pcard-body">
+                                            <h4>Ürostomi Torbası</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Ürostomi Torbası Tek Parçalı -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/urostomi-torbasi-tek-parcali.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/c5a594c341.png" alt="Ürostomi Torbası Tek Parçalı"></div>
+                                        <div class="pcard-body">
+                                            <h4>Ürostomi Torbası Tek Parçalı</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Postop Torbalar -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/postop-torbalar.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/261fc207d0.png" alt="Postop Torbalar"></div>
+                                        <div class="pcard-body">
+                                            <h4>Postop Torbalar</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Pediatrik Torba -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/pediatrik-torba.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/7bd143d51e.png" alt="Pediatrik Torba"></div>
+                                        <div class="pcard-body">
+                                            <h4>Pediatrik Torba</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Adaptörler Kategorisi -->
+                    <div class="category-group" data-category="adaptorler">
+                        <h2 class="category-title">Adaptörler</h2>
+                        <div class="row g-3">
+                            <!-- Mini Cap -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/mini-cap.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/f32322a80c.png" alt="Mini Cap"></div>
+                                        <div class="pcard-body">
+                                            <h4>Mini Cap</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Düz Adaptör Taban Plakası -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/duz-adaptor-taban-plakasi.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/16d4d088cd.png" alt="Düz Adaptör Taban Plakası"></div>
+                                        <div class="pcard-body">
+                                            <h4>Düz Adaptör Taban Plakası</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Konveks Çukur Adaptör -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/konvex-cukur-adaptor.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/4130e9f6c1.png" alt="Konveks Çukur Adaptör"></div>
+                                        <div class="pcard-body">
+                                            <h4>Konveks Çukur Adaptör</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Pediatrik Adaptör -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/pediatrik-adaptor.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/f723368e8b.png" alt="Pediatrik Adaptör"></div>
+                                        <div class="pcard-body">
+                                            <h4>Pediatrik Adaptör</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Günlük Bakım Ürünleri Kategorisi -->
+                    <div class="category-group" data-category="bakim">
+                        <h2 class="category-title">Günlük Bakım Ürünleri</h2>
+                        <div class="row g-3">
+                            <!-- Stoma Macun / Pasta -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/stoma-macun-pasta.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/44bf8b91a4.png" alt="Stoma Macun / Pasta"></div>
+                                        <div class="pcard-body">
+                                            <h4>Stoma Macun / Pasta</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Stoma Kemeri -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/stoma-kemeri.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/5f98126b84.png" alt="Stoma Kemeri"></div>
+                                        <div class="pcard-body">
+                                            <h4>Stoma Kemeri</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Ostomi Pudrası -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/ostomi-pudrasi.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/b3a68542b9.png" alt="Ostomi Pudrası"></div>
+                                        <div class="pcard-body">
+                                            <h4>Ostomi Pudrası</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Brava Yapışkan Çıkartıcı Sprey -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/brava-yapiskan-cikartici-sprey.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/010c87a9fd.png" alt="Brava Yapışkan Çıkartıcı Sprey"></div>
+                                        <div class="pcard-body">
+                                            <h4>Brava Yapışkan Çıkartıcı Sprey</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Brava Yapışkan Çıkartıcı Mendil -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/brava-yapiskan-cikartici-mendil.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/8825ffe071.png" alt="Brava Yapışkan Çıkartıcı Mendil"></div>
+                                        <div class="pcard-body">
+                                            <h4>Brava Yapışkan Çıkartıcı Mendil</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Brava Cilt Koruyucu Sprey -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/brava-cilt-koruyucu-sprey.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/6047389ace.png" alt="Brava Cilt Koruyucu Sprey"></div>
+                                        <div class="pcard-body">
+                                            <h4>Brava Cilt Koruyucu Sprey</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Brava Bariyer Krem -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/brava-bariyer-krem.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/d7bafaed3a.png" alt="Brava Bariyer Krem"></div>
+                                        <div class="pcard-body">
+                                            <h4>Brava Bariyer Krem</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Brava Elastik Bant -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/brava-elastik-bant.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/956c614feb.png" alt="Brava Elastik Bant"></div>
+                                        <div class="pcard-body">
+                                            <h4>Brava Elastik Bant</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Brava Halka Pasta -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/brava-halka-pasta-elle-sekillendirirebilir.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/2e83deb602.png" alt="Brava Halka Pasta"></div>
+                                        <div class="pcard-body">
+                                            <h4>Brava Halka Pasta</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Bacak Bağı -->
+                            <div class="col-6 col-md-4">
+                                <a href="../urun-detay/bacak-bagi.html" class="pcard-wrap">
+                                    <div class="pcard scroll-element">
+                                        <div class="pcard-img"><img src="../upload/a9410bfbcc.png" alt="Bacak Bağı"></div>
+                                        <div class="pcard-body">
+                                            <h4>Bacak Bağı</h4>
+                                            <span class="pcard-link">İncele</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget">
+                        <img src="../upload/396e08540e.png" alt="SembolTibbi" style="height:50px;background:white;padding:5px;border-radius:5px;" class="mb-4">
+                        <ul class="footer-contact">
+                            <li><i class="fas fa-phone text-white"></i> <a href="tel:+902125290186.html">+90 212 529 01 86</a></li>
+                            <li><i class="fas fa-envelope text-white"></i> <a href="mailto:info@semboltibbi.com">info@semboltibbi.com</a></li>
+                            <li><i class="fas fa-map-marker-alt text-white"></i> <span>Haseki Sultan Mah. Özbek Süleyman Efendi Sok. No: 14/A Fındıkzade Fatih / İSTANBUL</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget">
+                        <h3>Hızlı Menü</h3>
+                        <ul>
+                            <li><a href="../index.html">Ana Sayfa</a></li>
+                            <li><a href="../hakkimizda.html">Hakkımızda</a></li>
+                            <li><a href="../urun/index.html">Ürünler</a></li>
+                            <li><a href="../bakimlar.html">Bakımlar</a></li>
+                            <li><a href="../iletisim.html">İletişim</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget">
+                        <h3>Ürün Kategorileri</h3>
+                        <ul>
+                            <li><a href="ostomi-urunleri.html">Ostomi Ürünleri</a></li>
+                            <li><a href="yara-bakim.html">Yara Bakım</a></li>
+                            <li><a href="kontinans-bakim-urunleri.html">Kontinans Bakım</a></li>
+                            <li><a href="sonda-urunleri.html">Sonda Ürünleri</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SembolTibbi. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send?phone=+905317721888&text=Merhaba%20bilgi%20almak%20istiyorum." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Scroll animasyonu
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((e, i) => {
+                    if (e.isIntersecting) {
+                        setTimeout(() => e.target.classList.add('visible'), i * 60);
+                    }
+                });
+            }, { threshold: 0.05 });
+            document.querySelectorAll('.scroll-element').forEach(el => observer.observe(el));
+
+            // Header scroll efekti
+            window.addEventListener('scroll', () => {
+                document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // Kategori filtreleme
+            const categoryButtons = document.querySelectorAll('.list-group-item');
+            const categoryGroups = document.querySelectorAll('.category-group');
+
+            function filterCategories(selectedCategory) {
+                categoryGroups.forEach(group => {
+                    if (selectedCategory === 'all' || group.dataset.category === selectedCategory) {
+                        group.style.display = 'block';
+                    } else {
+                        group.style.display = 'none';
+                    }
+                });
+            }
+
+            categoryButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    categoryButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const category = this.dataset.category;
+                    filterCategories(category);
+                });
+            });
+
+            // Başlangıçta tüm ürünler görünsün
+            filterCategories('all');
+        });
+    </script>
+</body>
+
+</html>

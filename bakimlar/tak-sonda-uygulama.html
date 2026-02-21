@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Tak Sonda Uygulama Rehberi | SembolTibbi</title>
+    <meta name="description"
+        content="Hidrofilik kateter ile temiz aralıklı kateterizasyon (TAK) uygulama rehberi. Adım adım sonda uygulama talimatları.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --accent: #06b6d4;
+            --gradient: linear-gradient(135deg, #2563eb, #06b6d4);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            background: #f0f4f8;
+            color: #1a1a2e;
+        }
+
+        .navbar-area {
+            background: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 10px 0;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #333;
+            margin-left: 20px;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .hero-section {
+            background: var(--gradient);
+            color: white;
+            padding: 60px 0 50px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 50px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-section p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        .breadcrumb-item a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .breadcrumb-item a:hover {
+            opacity: 1;
+        }
+
+        .breadcrumb-item.active {
+            color: white;
+            opacity: 1;
+        }
+
+        /* Info Card */
+        .info-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .info-card h2 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .info-card h3 {
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
+        /* Steps */
+        .step-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            border-left: 5px solid var(--primary);
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .step-card h4 {
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 1.15rem;
+        }
+
+        .step-card p {
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        /* Warning box */
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left: 5px solid #f59e0b;
+            border-radius: 16px;
+            padding: 25px 30px;
+            margin: 30px 0;
+        }
+
+        .warning-box h4 {
+            color: #92400e;
+            font-weight: 700;
+        }
+
+        .warning-box ul {
+            margin-bottom: 0;
+        }
+
+        .warning-box li {
+            color: #78350f;
+            padding: 4px 0;
+        }
+
+        /* Product cards */
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+        }
+
+        .product-card .img-wrap {
+            height: 180px;
+            background: #f0f4f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product-card .img-wrap img {
+            max-height: 140px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .product-card .card-body {
+            padding: 1.2rem 1.5rem;
+        }
+
+        .product-card h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .product-card .btn-sm {
+            background: var(--gradient);
+            border: none;
+            color: white;
+            border-radius: 50px;
+            padding: 6px 18px;
+            font-size: 0.85rem;
+        }
+
+        /* Feature boxes */
+        .feature-box {
+            background: white;
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .feature-box h5 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .feature-box p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* PDF download */
+        .pdf-banner {
+            background: var(--gradient);
+            color: white;
+            border-radius: 20px;
+            padding: 30px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .pdf-banner h4 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .pdf-banner p {
+            margin: 5px 0 0;
+            opacity: 0.9;
+        }
+
+        .pdf-banner .btn-download {
+            background: white;
+            color: var(--primary);
+            border: none;
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .pdf-banner .btn-download:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer-note {
+            background: #1a2b3c;
+            color: white;
+            padding: 30px 0;
+            margin-top: 60px;
+            text-align: center;
+            border-radius: 40px 40px 0 0;
+        }
+
+        .footer-note h3 {
+            font-weight: 300;
+            font-size: 2rem;
+        }
+
+        .footer-note h3 strong {
+            font-weight: 700;
+            color: #38bdf8;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .pdf-banner {
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar-area">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../upload/396e08540e.png" alt="SembolTibbi" style="height: 50px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Ana Sayfa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../hakkimizda.html">Hakkımızda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../urun/index.html">Ürünler</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="../bakimlar.html">Bakımlar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="fw-bold"><i class="fas fa-syringe me-3"></i>Tak Sonda Uygulama Rehberi</h1>
+            <p class="lead">Temiz Aralıklı Kateterizasyon (TAK) – Hidrofilik Kateter Kullanım Kılavuzu</p>
+            <nav aria-label="breadcrumb" class="mt-4">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="../index.html">Ana Sayfa</a></li>
+                    <li class="breadcrumb-item"><a href="../bakimlar.html">Bakımlar</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Tak Sonda Uygulama</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Üriner Sistem Bilgisi -->
+    <div class="container mb-5">
+        <div class="info-card">
+            <h2><i class="fas fa-info-circle me-2"></i>Üriner Sistem Hakkında</h2>
+            <p class="lead" style="color:#555;">Üriner sistem; böbreklerden, üreterlerden (idrar borusu), mesaneden
+                (idrar kesesi) ve üretradan oluşan bir sistemdir. Üriner sistem aynı zamanda vücuttaki kan hacminin, kan
+                basıncının ve kan pH'ının düzenlenmesinde de önemli bir rol oynamaktadır.</p>
+            <div class="row mt-4 g-4">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fas fa-kidneys"></i></div>
+                        <h5>Böbrekler</h5>
+                        <p>Kanı filtreler ve idrarı üretir. Her böbrekten birer üreter mesaneye uzanır.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fas fa-water"></i></div>
+                        <h5>Mesane</h5>
+                        <p>İdrarı geçici olarak depolayan kas yapılı bir organdır.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fas fa-notes-medical"></i></div>
+                        <h5>Üretra</h5>
+                        <p>İdrarın vücut dışına atıldığı kanal. Kadınlarda kısa, erkeklerde uzundur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAK Nedir -->
+    <div class="container mb-5">
+        <div class="info-card">
+            <h2><i class="fas fa-question-circle me-2"></i>TAK (Temiz Aralıklı Kateterizasyon) Nedir?</h2>
+            <p style="color:#555; font-size: 1.1rem;">Temiz Aralıklı Kateterizasyon (TAK), mesanenin düzenli aralıklarla
+                tek kullanımlık steril kateter yardımıyla boşaltılması işlemidir. İdrar retansiyonu (mesanede idrar
+                birikmesi) olan hastalarda uygulanır. TAK, enfeksiyon riskini azaltmak ve mesane fonksiyonlarını korumak
+                için tercih edilen güvenli bir yöntemdir.</p>
+
+            <h3 class="mt-4"><i class="fas fa-users me-2"></i>Kimler İçin Uygundur?</h3>
+            <ul class="list-group list-group-flush mb-3">
+                <li class="list-group-item"><i class="fas fa-check text-primary me-2"></i>Nörojenik mesane hastaları
+                </li>
+                <li class="list-group-item"><i class="fas fa-check text-primary me-2"></i>Spinal kord yaralanması
+                    geçirmiş hastalar</li>
+                <li class="list-group-item"><i class="fas fa-check text-primary me-2"></i>Multipl skleroz (MS) hastaları
+                </li>
+                <li class="list-group-item"><i class="fas fa-check text-primary me-2"></i>Spina bifida hastaları</li>
+                <li class="list-group-item"><i class="fas fa-check text-primary me-2"></i>Prostat cerrahisi sonrası
+                    idrar retansiyonu olan hastalar</li>
+                <li class="list-group-item"><i class="fas fa-check text-primary me-2"></i>Diyabetik nöropati ile mesane
+                    bozukluğu olan hastalar</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Uygulama Adımları -->
+    <div class="container mb-5">
+        <h2 class="text-center fw-bold mb-5" style="color: var(--primary);"><i class="fas fa-list-ol me-2"></i>Uygulama
+            Adımları</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>Hazırlık</h4>
+                    <p>Ellerinizi sabun ve su ile iyice yıkayın. Gerekli malzemeleri hazırlayın: kateter,
+                        kayganlaştırıcı jel, antiseptik, toplama kabı.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>Paketi Açın</h4>
+                    <p>Kateter paketini açın. Hidrofilik kateterlerde su ile temas ettikten sonra kaygan yüzey oluşur.
+                        Gerekirse paketin çift taraflı bandını kullanarak zemine sabitleyebilirsiniz.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>Kateteri Aktive Edin</h4>
+                    <p>Hidrofilik kateteri suyla aktive edin. Kayganlığını sağlamak için suyu paket içine doldurun ve 30
+                        saniye bekleyin.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h4>Hijyenik Temizlik</h4>
+                    <p>Genital bölgeyi antiseptik solüsyon ile temizleyin. Temizliği önden arkaya doğru yapın.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h4>Kateteri Yerleştirin</h4>
+                    <p>Kateteri üretraya nazikçe ilerletin. İdrar gelmeye başlayınca kateteri birkaç cm daha ilerletin
+                        ve idrarın tamamen boşalmasını bekleyin.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <h4>Kateteri Çıkarın</h4>
+                    <p>İdrar akışı durduğunda kateteri yavaşça çekin. Kateteri tek kullanımlık olarak imha edin. Tekrar
+                        steril etmeyiniz.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Uyarılar -->
+    <div class="container mb-5">
+        <div class="warning-box">
+            <h4><i class="fas fa-exclamation-triangle me-2"></i>Önemli Uyarılar</h4>
+            <ul class="mt-3">
+                <li>Kateter tek kullanımlıktır. <strong>Tekrar steril etmeyiniz</strong> ve yeniden kullanmayınız.</li>
+                <li>Paket üzerindeki son kullanım tarihinden sonra <strong>kullanılmamalıdır</strong>.</li>
+                <li>5–30°C arasında, kuru bir yerde saklayınız.</li>
+                <li>Uygulama sırasında direnç hissederseniz <strong>zorlamayın</strong>, doktorunuza başvurun.</li>
+                <li>Kateterizasyon sıklığı ve kateter boyutu doktorunuz tarafından belirlenmelidir.</li>
+                <li>Herhangi bir advers olay veya yan etki gözlendiğinde derhal doktorunuza müracaat ediniz.</li>
+                <li>Ürün kullanım amacı dışında başka amaçlarda <strong>kesinlikle kullanılamaz</strong>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Avantajlar -->
+    <div class="container mb-5">
+        <h2 class="text-center fw-bold mb-5" style="color: var(--primary);">Hidrofilik Kateter Avantajları</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-shield-virus"></i></div>
+                    <h5>Enfeksiyon Riski Düşük</h5>
+                    <p>Tek kullanımlık ve steril yapısı sayesinde idrar yolu enfeksiyonu (İYE) riski azaltılmıştır.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-hand-holding-water"></i></div>
+                    <h5>Sürtünme Olmadan Uygulama</h5>
+                    <p>Hidrofilik kaplama suyla aktive olur ve üretrada sürtünmeyi minimuma indirir.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
+                    <h5>Hasta Konforu</h5>
+                    <p>Kolay uygulama ve ağrısız geçiş ile hastaların günlük yaşam kalitesini artırır.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Önerilen Ürünler -->
+    <div class="container mb-5">
+        <h2 class="text-center fw-bold mb-5" style="color: var(--primary);"><i class="fas fa-box-open me-2"></i>Önerilen
+            Ürünler</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <a href="../urun-detay/kendinden-jelli-sonda.html" class="product-card">
+                    <div class="img-wrap">
+                        <img src="../upload/6e8fe13c37.png" alt="Kendinden Jelli Sonda">
+                    </div>
+                    <div class="card-body">
+                        <h5>Kendinden Jelli Sonda</h5>
+                        <p class="text-muted mb-2" style="font-size:0.85rem;">Hidrofilik kaplı, tek kullanımlık üriner
+                            kateter.</p>
+                        <span class="btn btn-sm">İncele →</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="../urun-detay/cololast-kendinden-jelli-sondalar-easicath.html" class="product-card">
+                    <div class="img-wrap">
+                        <img src="../upload/7b71d8cf83.png" alt="Tak Sonda">
+                    </div>
+                    <div class="card-body">
+                        <h5>Tak Sonda</h5>
+                        <p class="text-muted mb-2" style="font-size:0.85rem;">Coloplast marka hidrofilik üriner kateter.
+                        </p>
+                        <span class="btn btn-sm">İncele →</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="../urun-detay/prezervatif-sonda.html" class="product-card">
+                    <div class="img-wrap">
+                        <img src="../upload/7149ee6423.png" alt="Prezervatif Sonda">
+                    </div>
+                    <div class="card-body">
+                        <h5>Prezervatif Sonda</h5>
+                        <p class="text-muted mb-2" style="font-size:0.85rem;">Harici idrar toplama için prezervatif tipi
+                            sonda.</p>
+                        <span class="btn btn-sm">İncele →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF İndir -->
+    <div class="container mb-5">
+        <div class="pdf-banner">
+            <div>
+                <h4><i class="fas fa-file-pdf me-2"></i>Detaylı Kullanım Kılavuzu</h4>
+                <p>Demersan Biyoteknoloji – Hidrofilik Yüzüklü Üriner Kateter Kullanım Kılavuzu (PDF)</p>
+            </div>
+            <a href="../upload/sondauygulama.pdf" target="_blank" class="btn-download">
+                <i class="fas fa-download"></i> PDF İndir
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-note">
+        <div class="container">
+            <h3 class="fw-light">"<strong>Sembol Tibbi Malzeme</strong> ile Sonda Bakımında Yanınızdayız!"</h3>
+            <p class="mt-3 opacity-75">© 2026 Sembol Tibbi Malzeme – Tıbbi Cihaz ve Bakım Ürünlerinde Güvenilir Çözümler</p>
+        </div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone=+905317721888&text=Merhaba%20sonda%20ürünleri%20hakkında%20bilgi%20almak%20istiyorum."
+        class="whatsapp-float" target="_blank"
+        style="position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 5px 20px rgba(37,211,102,0.4); z-index: 999; animation: pulse 2s infinite;">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            }
+
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+            }
+        }
+    </style>
+</body>
+
+</html>

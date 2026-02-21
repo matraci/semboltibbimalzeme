@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Biatain Aljinat gümüşlü Dolgu | SembolTibbi</title>
+
+    <meta name="description" content="25 yılı aşkın süredir sağlık sektöründe uzmanlaşmış olduğu hassas bakım gerektiren tedaviler alanında, öncelikle hastanın ihtiyaçlarını karşılamayı ilke edinerek hizmet vermekteyiz.  Global partnerler">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body{
+            font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+            background:#ffffff;
+            color:#111;
+        }
+
+        .section{
+            padding:100px 20px;
+        }
+
+        .hero{
+            padding:120px 20px;
+        }
+
+        .hero h1{
+            font-size:48px;
+            font-weight:700;
+            letter-spacing:-1px;
+        }
+
+        .hero p{
+            font-size:20px;
+            color:#555;
+        }
+
+        .btn-premium{
+            padding:10px 22px;
+            border-radius:50px;
+            font-weight:500;
+        }
+
+        .light-section{
+            background:#f5f5f7;
+        }
+
+        .feature-box{
+            text-align:center;
+            padding:40px 20px;
+        }
+
+        .feature-box i{
+            font-size:32px;
+            margin-bottom:20px;
+        }
+
+        .table thead th{
+            font-weight:600;
+            font-size:14px;
+            letter-spacing:0.5px;
+            color:#666;
+            border-bottom:2px solid #eee;
+        }
+
+        .table tbody tr{
+            transition:0.3s;
+        }
+
+        .table tbody tr:hover{
+            background:#f5f5f7;
+        }
+
+        .table td{
+            padding:18px 10px;
+            vertical-align:middle;
+        }
+
+        ul{
+            padding-left:18px;
+        }
+        .page-header{
+            padding:60px 0;
+            background:#f5f5f7;
+        }
+
+        .breadcrumb{
+            background:transparent;
+            padding:0;
+            margin-bottom:0;
+        }
+        .header-area {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-brand img {
+            height: 60px;
+        }
+        .nav-link {
+            font-weight: 500;
+            color: #333;
+            margin-left: 15px;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #d63384; 
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: #333;
+            transition: 0.3s;
+        }
+    
+        /* Tablo satırı üzerine gelindiğinde arka plan rengini değiştir */
+        .table tbody tr:hover {
+            background-color: #f2f2f2;  /* Açık gri renk */
+            cursor: pointer;             /* İmleci el simgesi yapmak isterseniz */
+            transition: background-color 0.2s ease;
+        }
+
+    
+        /* Rehbere Dön Butonu */
+        .back-to-guide {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0099cc, #00c6ff);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 5px 20px rgba(0, 153, 204, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .back-to-guide:hover {
+            transform: scale(1.12);
+            box-shadow: 0 8px 30px rgba(0, 153, 204, 0.6);
+            color: white;
+        }
+        .back-to-guide .tooltip-text {
+            position: absolute;
+            right: 66px;
+            background: #1a2b3c;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .back-to-guide .tooltip-text::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -6px;
+            transform: translateY(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: transparent transparent transparent #1a2b3c;
+        }
+        .back-to-guide:hover .tooltip-text {
+            opacity: 1;
+        }
+
+
+        /* Satın Al Hover Popover */
+        .satin-al-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .satin-al-popover {
+            position: absolute;
+            bottom: calc(100% + 15px);
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+            padding: 20px;
+            min-width: 260px;
+            max-width: 300px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            text-align: center;
+            pointer-events: none;
+        }
+        .satin-al-popover::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 10px;
+            border-style: solid;
+            border-color: #ffffff transparent transparent transparent;
+        }
+        .satin-al-wrapper:hover .satin-al-popover {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+        .satin-al-popover img {
+            max-width: 100%;
+            height: auto;
+            max-height: 60px;
+            margin-bottom: 12px;
+        }
+        .satin-al-popover p {
+            margin: 0;
+            font-size: 13px;
+            color: #444;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="header-area" id="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand logo" href="../index.html">
+                    <img src="../upload/396e08540e.png" alt="SembolTibbi" style="height: 60px;">
+                </a>
+                <button class="navbar-toggler hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="collapse navbar-collapse main-menu" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Ana Sayfa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../hakkimizda.html">Hakkımızda</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="../urun/index.html">Ürünler</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../bakimlar.html">Bakımlar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="fade-in visible">Biatain Aljinat gümüşlü Dolgu</h1>
+                    <nav aria-label="breadcrumb" class="fade-in visible">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../index.html">Ana Sayfa</a></li>
+                            <li class="breadcrumb-item"><a href="../urun/index.html">Ürünler</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Biatain Aljinat gümüşlü Dolgu</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-6 mb-5">
+                    <!-- Title moved to page-header -->
+
+                    <div class="mt-4 hero-description">
+                        Enfekte yaralarda kavite doldurma için önerilirPansumanın tasarımı ve yapısal bütünlüğü herhangi bir büyüklük, şekil ve derinlikte yaraya uyması için pansumanı kesmenizi mümkün kılar.Geniş antimikrobiyal profile sahip bir gümüş kompleksi içeren paten...
+                    </div>
+
+                    <div class="mt-4">
+                        <a href="#iletisim" class="btn btn-dark btn-premium me-3">Bilgi Al</a>
+
+                        <span class="satin-al-wrapper">
+                            <a href="https://www.tibbisarf.com" target="_blank"
+                                class="btn btn-success btn-premium"><i class="fa-solid fa-cart-shopping me-2"></i>Satın Al</a>
+                            <div class="satin-al-popover">
+                                <img src="../upload/tibbisarf.jpg" alt="TibbiSarf">
+                                <p>Pazaryerlerine Ektra Komisyon vs ücret ödemeden sitemizden alabilirsiniz.</p>
+                            </div>
+                        </span>
+</div>
+
+                </div>
+
+                <div class="col-lg-6 text-center">
+                    <img src="../upload/1feabd66a5.png" class="img-fluid rounded-4 shadow" alt="Biatain Aljinat gümüşlü Dolgu">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAYLI AÇIKLAMA -->
+    <section class="section light-section" id="aciklama">
+        <div class="container">
+
+            
+            <div class="product-content">
+                
+<div class="container">
+<h2 class="text-center mb-5">Biatain Aljinat gümüşlü Dolgu Nedir?</h2>
+<div class="product-content">
+<p>
+<div class="readmode-content-viewport rma" style="height:auto; overflow:hidden">
+<div class="product-description readmode-content-display">
+<div class="btn-holder"> </div>
+<div class="description">
+<p><strong>Enfekte yaralarda kavite doldurma için önerilir</strong></p>
+<p>Pansumanın tasarımı ve yapısal bütünlüğü herhangi bir büyüklük, şekil ve derinlikte yaraya uyması için pansumanı kesmenizi mümkün kılar.</p>
+<p><strong>Geniş antimikrobiyal profile sahip bir gümüş kompleksi içeren patentli pansuman</strong></p>
+<p>Biatain<sup>®</sup> Aljinat Ag, tüm kullanma süresi (7 güne kadar) boyunca sürekli bir antibakteriyel etki sağlar (2).</p>
+<p><strong>Yüksek pansuman bütünlüğü</strong></p>
+<p>Yüksek pansuman bütünlüğü minimum ağrı ve travmayla tek parça olarak çıkarmayı mümkün kılar (1).</p>
+<p><strong>Minimuma indirilmiş sızıntı ve maserasyon riski</strong></p>
+<p>Biatain<sup>®</sup> Aljinat Ag emilimi (1) ve jel içinde eksüdayı kilitleyen jel oluşumu yara çevresindeki ciltte maserasyona neden olabilecek sızıntıyı önler.</p>
+<p><strong>Belgelendirilmiş hemostatik etki</strong></p>
+<p>Hidrofiber pansumanların aksine Biatain<sup>®</sup> Aljinat Ag ürününün belgelenmiş bir hemostatik etkisi yani küçük kanamalarda kan akışını durdurma özelliği vardır (4,5).</p>
+<p><strong>Etki mekanizması</strong></p>
+<p>Yara eksüdasına temas ettiğinde Biatain<sup>®</sup> Aljinat Ag enfeksiyon kontrolü için şekli yara yatağına yakından uyum gösteren yumuşak, koheziv bir jele dönüşür. Gümüş kompleksi, yara eksüdası varlığında iyonlar salar.</p>
+<p><strong>Ürün bileşimi</strong></p>
+<p>Biatain<sup>®</sup> Aljinat Ag, aljinat, karboksimetilselüloz (KMS) ve bir iyonik gümüş kompleksinden oluşan bir aljinat pansumandır.</p>
+<p><strong>Kullanım</strong></p>
+<p>Biatain<sup>®</sup> Aljinat Ag, orta derece ila ağır eksüdasyonlu olan kısmi ila tam kalınlıkta tüm yaralarda kullanılabilir. Biatain<sup>®</sup> Aljinat Ag, enfeksiyon riski olan yaralar veya enfekte yaralarda kullanılabilir. Biatain<sup>®</sup> Aljinat Ag, kompresyon bandajları altında kullanılabilir. Biatain<sup>®</sup> Aljinat Ag, kuru veya hafif eksüdasyonlu yaralarda veya ağır kanamayı kontrol etmek için kullanılmamalıdır. Biatain<sup>®</sup> Aljinat Ag, bacak ülserleri, bası yaraları, diyabetik ayak ülserleri, donör bölgeleri, travmatik yaralar ve ikinci derece yanıklar için endikedir.</p>
+<p> </p>
+<p><strong>REFERANSLAR</strong></p>
+<p>1. Thomas S et al. www.dressings.org/TechnicalPublications/PDF/Coloplast-Dressings-Testing-2003-2004.pdf</p>
+<p>2. Data on file (Independent laboratory testing performed by Wickham Laboratories).</p>
+<p>3. http://www.worldwidewounds.com/1998/june/Alginates-FAQ/alginates-questions.html</p>
+<p>4. Segal HC et al. The effects of alginate and non-alginate wound dressings on blood coagolation and platelet activation. Journal of Biomaterials Applications 1998;249-57.</p>
+<p>5. Elalamy I and Robert F. Etude in vitro des effets proactivateurs plaquettaires de deux pansements: Alginate pur (Algostéril) et Alginate-CMC (SeaSorb Soft), etude sur plasma riche en plaquettes. CPC France 2007.</p>
+</div>
+</div>
+</div>
+</p>
+</div>
+</div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ÖZELLİKLER (Generic/Placeholder) -->
+    <section class="section">
+        <div class="container text-center">
+
+            <h2 class="mb-5">Teknoloji ve Avantajlar</h2>
+
+            <div class="row">
+
+                <div class="col-md-4 feature-box">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3 class="h5">Güvenli Kullanım</h3>
+                    <p>Maksimum güvenlik ve konfor sağlayan yapı.</p>
+                </div>
+
+                <div class="col-md-4 feature-box">
+                    <i class="fa-solid fa-wind"></i>
+                    <h3 class="h5">Konforlu Tasarım</h3>
+                    <p>Günlük yaşamda rahatlık sunan ergonomik tasarım.</p>
+                </div>
+
+                <div class="col-md-4 feature-box">
+                    <i class="fa-solid fa-check"></i>
+                    <h3 class="h5">Kolay Uygulama</h3>
+                    <p>Pratik ve hızlı kullanım imkanı.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TEKNİK DETAY (Optional/Placeholder) -->
+    <!--
+    <section class="section light-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Teknik Özellikler</h2>
+            <ul>
+                <li>Özellik 1</li>
+                <li>Özellik 2</li>
+            </ul>
+        </div>
+    </section>
+    -->
+
+    <!-- ÜRÜN SEÇENEKLERİ TABLO -->
+    <section class="section">
+        <div class="container">
+
+            <h2 class="text-center mb-5">Ürün Seçenekleri ve Ölçüler</h2>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle text-center">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>Ürün Kodu</th>
+            <th>Açıklama</th>
+            <th>Kutu İçeriği</th>
+            <th>Ölçü</th>
+            <th>Renk</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> </td>
+            <td>3760</td>
+            <td>Biatain Aljinat Ag Yara Örtüsü 10 cm x 10 cm</td>
+            <td>10 Adet</td>
+            <td>10 x 10</td>
+            <td>Opak</td>
+            <td><a href="#iletisim" class="btn btn-sm btn-dark btn-premium">Bilgi Al</a></td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td>3765</td>
+            <td>Biatain Aljinat Ag Yara Örtüsü 15 cm x 15 cm</td>
+            <td>10 Adet</td>
+            <td>15 x 15</td>
+            <td>Opak</td>
+            <td><a href="#iletisim" class="btn btn-sm btn-dark btn-premium">Bilgi Al</a></td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td>3780</td>
+            <td>Biatain Aljinat Ag Yara Örtüsü 3 cm x 44 cm</td>
+            <td>10 Adet</td>
+            <td>3 x 44</td>
+            <td>Opak</td>
+            <td><a href="#iletisim" class="btn btn-sm btn-dark btn-premium">Bilgi Al</a></td>
+        </tr>
+    </tbody>
+</table>
+            </div>
+
+        </div>
+    </section>
+
+<!-- İLETİŞİM / FOOTER PARTIAL (Simplified for single page, pointing to main site) -->
+    <section id="iletisim" class="section text-center">
+        <div class="container">
+            <h2>İletişim</h2>
+            <p>Detaylı bilgi ve sipariş için bize ulaşın.</p>
+            <a href="../iletisim.html" class="btn btn-primary btn-premium">İletişim Sayfasına Git</a>
+        </div>
+    </section>
+    <!-- Rehbere Dön Butonu -->
+    <a href="javascript:history.back()" class="back-to-guide" title="Rehbere Dön" id="backToGuide">
+        <span class="tooltip-text">Rehbere Dön</span>
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+
+    <title>Adaptör Uyumlu Kolostomi ve İleostomi Torbaları | SembolTibbi</title>
+
+    <meta name="description" content="25 yılı aşkın süredir sağlık sektöründe uzmanlaşmış olduğumuz hassas bakım gerektiren tedaviler alanında, öncelikle hastanın ihtiyaçlarını karşılamayı ilke edinerek hizmet vermekteyiz. Global partnerler">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #ffffff;
+            color: #111;
+            overflow-x: hidden;
+        }
+
+        .section {
+            padding: 60px 20px;
+        }
+
+        .hero {
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .btn-premium {
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .light-section {
+            background: #f5f5f7;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .feature-box i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #d63384;
+        }
+
+        /* Tablo mobil iyileştirmeleri */
+        .table thead th {
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            color: #666;
+            border-bottom: 2px solid #dee2e6;
+            white-space: nowrap;
+        }
+
+        .table tbody tr {
+            transition: 0.2s;
+        }
+
+        .table tbody tr:hover {
+            background: #f5f5f7;
+        }
+
+        .table td {
+            padding: 15px 8px;
+            vertical-align: middle;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 576px) {
+            .table td, .table th {
+                font-size: 0.85rem;
+                padding: 10px 5px;
+            }
+            .btn-sm {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.75rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Görsellerin taşmasını engelle */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* İçerik düzeni */
+        .product-content img {
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .embed-responsive {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 0;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+        }
+
+        .embed-responsive iframe {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .page-header {
+            padding: 50px 0;
+            background: #f5f5f7;
+        }
+
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin-bottom: 0;
+            flex-wrap: wrap;
+        }
+
+        .header-area {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #333;
+            margin-left: 15px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #d63384;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: #333;
+            transition: 0.3s;
+        }
+
+        .table-responsive {
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+
+        .table thead {
+            background-color: #fff;
+        }
+    
+        /* Tablo satırı üzerine gelindiğinde arka plan rengini değiştir */
+        .table tbody tr:hover {
+            background-color: #f2f2f2;  /* Açık gri renk */
+            cursor: pointer;             /* İmleci el simgesi yapmak isterseniz */
+            transition: background-color 0.2s ease;
+        }
+
+    
+        /* Rehbere Dön Butonu */
+        .back-to-guide {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0099cc, #00c6ff);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 5px 20px rgba(0, 153, 204, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .back-to-guide:hover {
+            transform: scale(1.12);
+            box-shadow: 0 8px 30px rgba(0, 153, 204, 0.6);
+            color: white;
+        }
+        .back-to-guide .tooltip-text {
+            position: absolute;
+            right: 66px;
+            background: #1a2b3c;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .back-to-guide .tooltip-text::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -6px;
+            transform: translateY(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: transparent transparent transparent #1a2b3c;
+        }
+        .back-to-guide:hover .tooltip-text {
+            opacity: 1;
+        }
+
+
+        /* Satın Al Hover Popover */
+        .satin-al-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .satin-al-popover {
+            position: absolute;
+            bottom: calc(100% + 15px);
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+            padding: 20px;
+            min-width: 260px;
+            max-width: 300px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            text-align: center;
+            pointer-events: none;
+        }
+        .satin-al-popover::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 10px;
+            border-style: solid;
+            border-color: #ffffff transparent transparent transparent;
+        }
+        .satin-al-wrapper:hover .satin-al-popover {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+        .satin-al-popover img {
+            max-width: 100%;
+            height: auto;
+            max-height: 60px;
+            margin-bottom: 12px;
+        }
+        .satin-al-popover p {
+            margin: 0;
+            font-size: 13px;
+            color: #444;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="header-area" id="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand logo" href="../index.html">
+                    <img src="../upload/396e08540e.png" alt="SembolTibbi" style="height: 50px;">
+                </a>
+                <button class="navbar-toggler hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Menü">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="collapse navbar-collapse main-menu" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Ana Sayfa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../hakkimizda.html">Hakkımızda</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="../urun/index.html">Ürünler</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../bakimlar.html">Bakımlar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="fade-in visible">Adaptör Uyumlu Kolostomi ve İleostomi Torbaları</h1>
+                    <nav aria-label="breadcrumb" class="fade-in visible">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../index.html">Ana Sayfa</a></li>
+                            <li class="breadcrumb-item"><a href="../urun/index.html">Ürünler</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Adaptör Uyumlu Torbalar</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                    <div class="mt-2 hero-description">
+                        <p class="lead"><strong>Alterna 2 parçalı boşaltılabilir ürün</strong> standart ve uzun süreli kullanımlı adaptör için düz veya konveks seçeneklerle sunulur. Geniş ürün yelpazesi, önceden kesilmiş veya ayarlanabilir delik ebatları olan adaptörler ve çeşitli boylarda şeffaf/opak torbalardan oluşur.</p>
+                    </div>
+                    <div class="mt-4 d-flex flex-wrap gap-2">
+                        <a href="#iletisim" class="btn btn-dark btn-premium me-2">Bilgi Al</a>
+
+                        <span class="satin-al-wrapper">
+                            <a href="https://www.tibbisarf.com" target="_blank"
+                                class="btn btn-success btn-premium"><i class="fa-solid fa-cart-shopping me-2"></i>Satın Al</a>
+                            <div class="satin-al-popover">
+                                <img src="../upload/tibbisarf.jpg" alt="TibbiSarf">
+                                <p>Pazaryerlerine Ektra Komisyon vs ücret ödemeden sitemizden alabilirsiniz.</p>
+                            </div>
+                        </span>
+</div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="../upload/f2d5385277.png" class="img-fluid rounded-4 shadow" alt="Adaptör Uyumlu Kolostomi ve İleostomi Torbaları" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAYLI AÇIKLAMA -->
+    <section class="section light-section" id="aciklama">
+        <div class="container">
+            <h2 class="text-center mb-5">Adaptör Uyumlu Kolostomi ve İleostomi Torbaları Nedir?</h2>
+            <div class="product-content">
+                <div class="container p-0">
+                    <div class="product-content">
+                        <div class="description">
+                            <h4>Ürün Tanıtımı</h4>
+                            <p>Alterna 2 parçalı boşaltılabilir ürün standart kullanımlı ve uzun süreli kullanımlı adaptör için, düz veya konveks seçeneklerle sunulur. Geniş ürün yelpazesi, önceden kesilmiş veya ayarlanabilir delik ebatları olan adaptörlerden ve çeşitli boylarda şeffaf veya opak renk torbalardan oluşmaktadır.</p>
+
+                            <h4>Güvenli ve cilt dostu, spiral yapışkan</h4>
+                            <p>Alterna spiral yapışkan, aşağıdakiler için spiral yapıda güvenli kullanım ve koruma sağlamak üzere tasarlanmış olan malzemelerin kombinasyonudur:</p>
+                            <ul>
+                                <li>Cildinize güvenli şekilde yapışır</li>
+                                <li>Cildinizdeki nemin emilimini sağlar - cilt dostudur ve tahrişe karşı koruma sağlar</li>
+                            </ul>
+                            <p>Alterna [Ekstra] yapışkan, yoğun çıktılara karşı ek koruma sağlar. Standart yapışkanların çok hızlı özelliğini yitirmesine yol açan daha yoğun stoma çıktısı olan ileostomi veya ürostomili bireyler için uygundur.</p>
+
+                            <h4>Rahat ve gizlenebilir torba</h4>
+                            <p>Alterna 2 parçalı boşaltılabilir ürün, rahatlık ve gizli kullanım sunmak üzere tasarlanmış özelliklere sahiptir:</p>
+                            <ul>
+                                <li>Saklanabilen boşaltım bölümü - Çıkış kısmından çıktının boşaltılması ve temizlenmesi kolaydır. Klips gerektirmeden kolayca kapatılabilen entegre VELCRO® kapanma sistemi ile bir araya getirilmiştir.</li>
+                                <li>Etkili filtre - Entegre üç tabakalı filtre torbanın yukarı doğru şişmesi ve gereksiz çıkıntı yapması riskini ortadan kaldırır, ayrıca kokuyu nötralize eder.</li>
+                                <li>Cilde temas eden yumuşak torba kumaşı - kuvvetli ve sıvı uzaklaştırma özelliğine sahiptir, banyo veya yüzme sonrasında kolayca kuruma sağlar.</li>
+                            </ul>
+
+                            <h4>Zor yönetilen stomalar için konveks özellik</h4>
+                            <p>Alterna [Yeni Nesil] 2 parçalı boşaltılabilir ürün, örneğin kızarmış, geri çekilmiş veya cilt kıvrımı içine yerleştirilmiş stomalar gibi zor yönetilen stomalarda yardımcı olunması amacıyla iki farklı derinlikte konveks seçenek sunar. Peristomal cilde basınç uygulayarak, stomanın çıkıntı yapmasına izin verir ve sızıntı riskini azaltır.</p>
+
+                            <h4>Konveks hafif</h4>
+                            <p>Kızarmış veya hafif geri çekilmiş olan stomalar için karın bölgesine hafif ve hassas basınç uygulayarak ekstra güven sağlayan çözüm.</p>
+                        </div>
+
+
+                                                <div class="ratio ratio-16x9">
+                            <a href="https://youtu.be/kzdP8v6qEyw" target="_blank" rel="noopener"
+                                style="display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-decoration: none; background: #000;">
+                                <img src="https://img.youtube.com/vi/kzdP8v6qEyw/hqdefault.jpg"
+                                    alt="YouTube Video"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                                <!-- Oynatma butonu -->
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 68px; height: 48px; background: rgba(255,0,0,0.85); border-radius: 14px; transition: background 0.2s;">
+                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-40%, -50%); width: 0; height: 0; border-style: solid; border-width: 12px 0 12px 20px; border-color: transparent transparent transparent #fff;"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÖZELLİKLER -->
+    <section class="section">
+        <div class="container text-center">
+            <h2 class="mb-5">Teknoloji ve Avantajlar</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h3 class="h5">Güvenli Kullanım</h3>
+                        <p>Maksimum güvenlik ve konfor sağlayan spiral yapışkan teknolojisi.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fa-solid fa-wind"></i>
+                        <h3 class="h5">Konforlu Tasarım</h3>
+                        <p>Günlük yaşamda rahatlık sunan yumuşak kumaş ve gizli boşaltım.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fa-solid fa-check"></i>
+                        <h3 class="h5">Kolay Uygulama</h3>
+                        <p>Pratik ve hızlı kullanım için önceden kesilmiş veya ayarlanabilir delikler.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÜRÜN ÇEŞİDİ TABLOSU (Kullanıcının verdiği yapı aynen korundu) -->
+    <section class="product-desc-area pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="bakix-details-tab">
+                        <ul class="nav text-center justify-content-center pb-30 mb-50" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active" id="cesit" data-bs-toggle="tab" href="#id-cesit" role="tab" aria-controls="home" aria-selected="true"> </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="cesit" role="tabpanel" aria-labelledby="cesit">
+                            <div class="uruncesidi-info">
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <h4>Ürün Çeşidi</h4>
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Ürün Kodu</th>
+                                                    <th>Açıklama</th>
+                                                    <th>Kutu İçeriği</th>
+                                                    <th>Ölçü</th>
+                                                    <th>Renk</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td><a href="https://www.tibbisarf.com/urun/kolostomi-torbasi-adaptor-uyumlu-60mm-kod-139860">103871</a></td>
+                                                    <td><a href="https://www.tibbisarf.com/urun/kolostomi-torbasi-adaptor-uyumlu-60mm-kod-139860">Kolostomi Torbası (Boşaltmalı)</a></td>
+                                                    <td><a href="https://www.tibbisarf.com/urun/kolostomi-torbasi-adaptor-uyumlu-60mm-kod-139860">30 Adet</a></td>
+                                                    <td><a href="https://www.tibbisarf.com/urun/kolostomi-torbasi-adaptor-uyumlu-60mm-kod-139860">70 mm max.</a></td>
+                                                    <td><a href="https://www.tibbisarf.com/urun/kolostomi-torbasi-adaptor-uyumlu-60mm-kod-139860">Transparent (Şeffaf)</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td>13976</td>
+                                                    <td><a href="https://www.tibbisarf.com/urun/kolostomi-torbasi-adaptor-uyumlu-60mm-kod-139860">Kolostomi Torbası (Boşaltmalı)</a></td>
+                                                    <td>30 Adet</td>
+                                                    <td>60 mm max.</td>
+                                                    <td>Transparent (Şeffaf)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td>13986</td>
+                                                    <td><a href="https://www.tibbisarf.com/urun/kolostomi-torbasi-adaptor-uyumlu-60mm-kod-139860">Kolostomi Torbası (Boşaltmalı)</a></td>
+                                                    <td>30 Adet</td>
+                                                    <td>60 mm max.</td>
+                                                    <td>Opak (içi Gözükmeyen)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td>13985</td>
+                                                    <td><a href="https://www.tibbisarf.com/urun/kolostomi-torbasi-adaptor-uyumlu-60mm-kod-139860">Kolostomi Torbası (Boşaltmalı)</a></td>
+                                                    <td>30 Adet</td>
+                                                    <td>50 mm max.</td>
+                                                    <td>Opak (içi Gözükmeyen)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td>13984</td>
+                                                    <td><a href="https://www.tibbisarf.com/urun/kolostomi-torbasi-adaptor-uyumlu-60mm-kod-139860">Kolostomi Torbası (Boşaltmalı)</a></td>
+                                                    <td>30 Adet</td>
+                                                    <td>40 mm max.</td>
+                                                    <td>Opak (içi Gözükmeyen)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td>176510</td>
+                                                    <td>Kolostomi Torbası (Boşaltmasız)</td>
+                                                    <td>30 Adet</td>
+                                                    <td>50 mm max.</td>
+                                                    <td>Opak (içi Gözükmeyen)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td>176520</td>
+                                                    <td>Kolostomi Torbası (Boşaltmasız)</td>
+                                                    <td>30 Adet</td>
+                                                    <td>40 mm max.</td>
+                                                    <td>Opak (içi Gözükmeyen)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- İLETİŞİM -->
+    <section id="iletisim" class="section light-section text-center">
+        <div class="container">
+            <h2>İletişim</h2>
+            <p class="mt-3">Detaylı bilgi ve sipariş için bize ulaşın.</p>
+            <a href="../iletisim.html" class="btn btn-primary btn-premium mt-2">İletişim Sayfasına Git</a>
+        </div>
+    </section>
+    <!-- Rehbere Dön Butonu -->
+    <a href="javascript:history.back()" class="back-to-guide" title="Rehbere Dön" id="backToGuide">
+        <span class="tooltip-text">Rehbere Dön</span>
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- WhatsApp Floating Button -->
+<style>
+  .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s;
+            z-index: 999;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        @keyframes pulse-whatsapp {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            }
+
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+            }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+</style>
+
+<a href="https://api.whatsapp.com/send?phone=+905317721888" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- =====================================================
+     SGK Uyarı Modalı
+     sgkKapsaminda = 1  → Modal açılır
+     sgkKapsaminda = 0  → Modal açılmaz
+====================================================== -->
+
+<!-- Modal HTML -->
+<div class="modal fade" id="sgkModal" tabindex="-1" aria-labelledby="sgkModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:16px; border: none; box-shadow: 0 8px 40px rgba(0,0,0,0.15);">
+
+      <!-- Başlık -->
+      <div class="modal-header" style="background: #0c80bd; border-radius:16px 16px 0 0; border:none; padding: 20px 24px;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <i class="fas fa-info-circle" style="color:#fff; font-size:22px;"></i>
+          <h5 class="modal-title fw-bold" id="sgkModalLabel" style="color:#fff; margin:0; font-size:16px;">
+            SGK Geri Ödeme Bilgisi
+          </h5>
+        </div>
+      </div>
+
+      <!-- Gövde -->
+      <div class="modal-body" style="padding: 28px 24px;">
+        <p style="font-size:15px; color:#222; line-height:1.75; margin:0;">
+          <strong id="sgkUrunAdi" style="color:#0c80bd;"></strong> ürünü
+          <strong>Sosyal Güvenlik Kurumu (SGK) geri ödeme kapsamındadır.</strong>
+        </p>
+        <p style="font-size:14px; color:#555; line-height:1.75; margin-top:14px; margin-bottom:0;">
+          Detaylı bilgi için bizimle
+          <a href="tel:02125290186" style="color:#0c80bd; font-weight:600; text-decoration:none;">
+            0212 529 01 86
+          </a>
+          nolu telefonda iletişime geçebilirsiniz.
+          <br>
+          Sitemizde bulunan
+          <strong>WhatsApp</strong> ikonunu tıklayarak da mesaj yazabilirsiniz.
+        </p>
+
+        <!-- WhatsApp ikonu önizleme -->
+        <div style="margin-top:18px; display:flex; align-items:center; gap:10px; background:#f0faf3; border-radius:10px; padding:12px 16px;">
+          <i class="fab fa-whatsapp" style="color:#25d366; font-size:26px;"></i>
+          <span style="font-size:13px; color:#333;">
+            Sayfanın sağ alt köşesindeki
+            <strong style="color:#25d366;">yeşil WhatsApp butonu</strong>
+            ile hızlıca ulaşabilirsiniz.
+          </span>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer" style="border:none; padding: 0 24px 20px; justify-content:flex-end; gap:10px;">
+        <button type="button" class="btn btn-outline-secondary"
+                style="border-radius:50px; font-size:14px; padding:10px 20px;"
+                data-bs-dismiss="modal">
+          Tamam
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // ─────────────────────────────────────────────
+  //  DEĞİŞKEN: 1 = SGK kapsamında → modal göster
+  //            0 = SGK kapsamında değil → modal gizle
+  // ─────────────────────────────────────────────
+  const sgkKapsaminda = 1;
+
+  // Ürün adını h1'den otomatik al
+  const urunAdi = document.querySelector('.page-header h1, h1.fade-in')?.innerText?.trim() || '';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (sgkKapsaminda === 1) {
+      document.getElementById('sgkUrunAdi').innerText = urunAdi + ' ';
+      var sgkModal = new bootstrap.Modal(document.getElementById('sgkModal'));
+      sgkModal.show();
+    }
+  });
+</script>
+
+</body>
+</html>
